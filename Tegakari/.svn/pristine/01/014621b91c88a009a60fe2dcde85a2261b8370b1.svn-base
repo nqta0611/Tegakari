@@ -1,0 +1,79 @@
+How many times would you like to run the server?
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: GREEK
+Sever adding Robot...
+Client connected
+Readying game...
+In testing mode... Solution: Hermes, Hermes Sandals, Poseidon's Ocean
+Dealing clues
+	 card: Aphrodite to player1 to player1
+	 card: Apollo's Chariot to Robot1_Basic to Robot1_Basic
+	 card: Athens to player2 to player2
+	 card: Dionysus to player1 to player1
+	 card: Artemis to Robot1_Basic to Robot1_Basic
+	 card: Athena's Horse to player2 to player2
+	 card: Atlas' Sky to player1 to player1
+	 card: Eros' Wings to Robot1_Basic to Robot1_Basic
+	 card: Hera to player2 to player2
+	 card: Hades' Dogs to player1 to player1
+	 card: Hades' Underworld to Robot1_Basic to Robot1_Basic
+	 card: Athena's Forest to player2 to player2
+	 card: Ares to player1 to player1
+	 card: Poseidon's Ship to Robot1_Basic to Robot1_Basic
+	 card: Mount Olympus to player2 to player2
+	 card: Dionysus' Vineyard to player1 to player1
+	 card: Hephaestus' Volcano to Robot1_Basic to Robot1_Basic
+	 card: Phoebe's Moon to player2 to player2
+Dealing action
+	 give actionC(Show me one red Vehicle Card) to player1
+	 give actionC(Show me one red Vehicle Card) to Robot1_Basic
+	 give actionC(Show me all your Vehicle Cards) to player2
+Dealing dest
+	 assign dest to player1
+	 assign dest to Robot1_Basic
+	 assign dest to player2
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Show me one red Vehicle Card
+Robot turn
+done drawing action card : class tegakari.PrivateTipCard
+
+Begin Robot1_Basic's turn
+Robot1_Basic plays action card: Show me one red Vehicle Card
+	Target Player:Robot1_Basic
+Target has no clues to show robot.
+Robot1_Basic has not found solution yet.
+Client disconnected
+**: The disconnect client was: player2
+Replaced human player with Robot
+	Handling tip card
+	created robot tip logic
+	called respond to action, and got 1 card to show
+	 isALL, no need to send card message
+Show me one northern Destination Card
+Robot turn
+done drawing action card : class tegakari.PrivateTipCard
+
+Begin Robot1_Basic's turn
+Robot1_Basic plays action card: Show me one red Vehicle Card
+	Target Player:Robot1_Basic
+Target has no clues to show robot.
+Robot1_Basic has not found solution yet.
+	Handling tip card
+	created robot tip logic
+	called respond to action, and got 0 card to show
+Show me one northern Destination Card
+Robot turn
+done drawing action card : class tegakari.PrivateTipCard
+
+Begin player2's turn
+player2 plays action card: Show me all your Vehicle Cards
+	Target Player:player1
+	Private Tip calls for multiple cards available. # of cards: 1
+player2 has not found solution yet.
+Client disconnected

@@ -1,0 +1,292 @@
+package integration_test;
+
+import java.io.*;
+import java.util.*;
+import junit.framework.TestCase;
+import tegakari.*;
+import static org.mockito.Mockito.*;
+import com.lloseng.ocsf.client.AbstractClient;
+
+/**
+ *
+ * @author DeionLaw
+ * @author Eric Rohset
+ */
+public class LobbyIntTest extends TestCase
+{
+    
+    private GameClient client = new GameClient("localhost", 5555);
+    private GameState state;
+    private Table table;
+    private GameEngine engine;
+    private Lobby zeroLobby;
+    private Lobby fiveLobby;
+    private Player p1 = new HumanPlayer("Shiro");
+    private Player p2 = new Robot("Sora", AILevel.SMART);
+    private Player p3 = new HumanPlayer("Player3");
+    private Player p4 = new Robot("Player4", AILevel.BASIC);
+    private Player p5 = new HumanPlayer("Player5");
+    
+    private Queue<Player> players;
+    
+    public LobbyIntTest(String testName)
+    {
+        super(testName);
+    }
+    
+    @Override
+    protected void setUp() throws Exception
+    {
+        super.setUp();
+        players = new LinkedList<Player>();
+        players.add(p1);
+        players.add(p2);
+        players.add(p3);
+        players.add(p4);
+        players.add(p5);
+        table = new Table(new Theme());
+        client = new GameClient("localHost", 5555);
+        state = new GameState(players, p1, table);
+        engine = new GameEngine(state, client, false);
+        zeroLobby = new Lobby(3, 5, true);
+        zeroLobby.setEngine(engine);
+        zeroLobby.setClient(client);
+        fiveLobby = new Lobby(3, 5, false);
+        fiveLobby.setEngine(engine);
+        fiveLobby.setClient(client);
+    }
+    
+    @Override
+    protected void tearDown() throws Exception
+    {
+        super.tearDown();
+    }
+    
+    public void testGetClient()
+    {
+        System.out.println("testGetClient");
+        
+        assertEquals(client, zeroLobby.getClient());
+        assertEquals(client, fiveLobby.getClient());
+    }
+    
+    public void testGetEngine()
+    {
+        System.out.println("testGetEngine");
+        
+        assertEquals(engine, zeroLobby.getEngine());
+        assertEquals(engine, fiveLobby.getEngine());
+    }
+    
+    public void testGetMaxPlayersAllowed()
+    {
+        System.out.println("testGetMaxPlayersAllowed");
+        
+        assertEquals(5, zeroLobby.getMaxPlayersAllowed());
+        assertEquals(5, fiveLobby.getMaxPlayersAllowed());
+    }
+    
+    public void testSetConsoleMod()
+    {
+        System.out.println("testSetConsoleMod");
+        
+        zeroLobby.prepareGame(table);
+        assertFalse(zeroLobby.getConsoleMode());
+        
+        zeroLobby.setConsoleMode(true);
+        assertTrue(zeroLobby.getConsoleMode());
+    }
+    
+    public void testLobbyWithServer()
+    {
+        System.out.println("testJoinLobby");
+        Lobby lobby = new Lobby(3, 5, true);
+        Lobby lobby2 = new Lobby(3, 5, true);
+        Lobby lobby3 = new Lobby(3, 5, true);
+        
+        GameServer server = new GameServer();
+        
+        lobby.setEngine(engine);
+        
+        try
+        {
+            lobby.setTestingMode("/testsetup/t10clue", "/testsetup/t10action");
+            server.listen();
+            assertTrue(lobby.joinLobby());
+            assertTrue(lobby2.joinLobby());
+            assertTrue(lobby3.joinLobby());
+            
+            assertFalse(server.startedGame());
+            assertFalse(server.gameOver());
+            
+            lobby.sendPlayerToServer("hello");
+            lobby.addRobot(AILevel.BASIC);
+            
+            assertFalse(server.startedGame());
+            assertFalse(server.gameOver());
+
+            lobby2.closeLobby();
+            lobby3.quitLobby();
+            
+            lobby.startGame();
+            lobby.setStartGame();
+            assertTrue(lobby.isStartGame());
+            
+            lobby.closeLobby();
+            lobby.quitLobby();
+        }
+        catch (Exception ex)
+        {
+            System.out.println("failed to start listen : " + ex);
+        }
+    }
+    
+    
+    
+    public void testGameStart() 
+    {
+        System.out.println("testGameStart");
+        Queue<Player> players = new ArrayDeque<Player>();
+        players.add(p1);
+        players.add(p2);
+        players.add(p3);
+        players.add(p4);
+        
+        GameClient gameClient = new GameClient("127.0.0.1", 443);
+        gameClient.setPlayer(p2);
+        GameState gameState = new GameState(players, p2, table);
+        GameEngine gameEngine = new GameEngine(gameState, gameClient);
+        Lobby lobby = new Lobby(3, 4, "127.0.0.1");
+        lobby.updatePlayers(players);
+        lobby.setClient(client);
+        lobby.setEngine(gameEngine);
+        //index out of bound exception for DMPile dealDM
+//        lobby.prepareGame(table);
+        /**
+         *  Needs equals method 
+         */
+//        assertEquals(gameEngine, lobby.getEngine());
+        assertFalse(lobby.isStartGame());
+        lobby.setStartGame();
+        assertTrue(lobby.isStartGame());
+        
+        assertFalse(zeroLobby.isStartGame());
+        zeroLobby.setStartGame();
+        assertTrue(zeroLobby.isStartGame());        
+    }
+        
+    
+    public void testThemeType() 
+    {
+        assertNull(zeroLobby.getThemeType());
+        zeroLobby.setThemeType(ThemeType.GREEK);
+        assertEquals(ThemeType.GREEK, zeroLobby.getThemeType());
+        zeroLobby.setThemeType(ThemeType.WESTERN);
+        assertEquals(ThemeType.WESTERN, zeroLobby.getThemeType());
+    }
+    
+    public void testGetPlayers()
+    {
+        players = new LinkedList<Player>();
+        assertEquals(0, fiveLobby.getPlayers().size());
+        
+        players.add(p1);
+        fiveLobby.updatePlayers(players);
+        assertEquals(players, fiveLobby.getPlayers());
+        players.add(p2);
+        fiveLobby.updatePlayers(players);
+        assertEquals(players, fiveLobby.getPlayers());
+        players.add(p3);
+        fiveLobby.updatePlayers(players);
+        assertEquals(players, fiveLobby.getPlayers());
+        players.add(p4);
+        fiveLobby.updatePlayers(players);
+        assertEquals(players, fiveLobby.getPlayers());
+        players.add(p5);
+        fiveLobby.updatePlayers(players);
+        assertEquals(players, fiveLobby.getPlayers());
+        
+    }
+    
+    public void testGetGameEngine() 
+    {
+        assertEquals(engine, zeroLobby.getGameEngine());
+    }
+    
+    public void testGetNumPlayersToStart() 
+    {
+        assertEquals(3, zeroLobby.getNumPlayersToStart());
+        assertEquals(3, fiveLobby.getNumPlayersToStart());
+        
+        players = new LinkedList<Player>();
+        
+        players.add(p1);
+        fiveLobby.updatePlayers(players);
+        assertEquals(2, fiveLobby.getNumPlayersToStart());
+        players.add(p2);
+        fiveLobby.updatePlayers(players);
+        assertEquals(1, fiveLobby.getNumPlayersToStart());
+        players.add(p3);
+        fiveLobby.updatePlayers(players);
+        assertEquals(0, fiveLobby.getNumPlayersToStart());
+        players.add(p4);
+        fiveLobby.updatePlayers(players);
+        assertEquals(0, fiveLobby.getNumPlayersToStart());
+        players.add(p5);
+        fiveLobby.updatePlayers(players);
+        assertEquals(0, fiveLobby.getNumPlayersToStart());
+    }
+    
+    public void testReadyGame() 
+    {
+        assertFalse(fiveLobby.isGameReady());
+        fiveLobby.readyGame();
+        assertTrue(fiveLobby.isGameReady());
+    }
+    
+    
+    public void testIsFirstPlayer()
+    {
+        GameClient p1Client = new GameClient("local", 5555);
+        GameClient p2Client = new GameClient("local", 5555);
+        p1Client.setPlayer(p1);
+        p2Client.setPlayer(p2);
+        Lobby p1Lobby = new Lobby(2, 2);
+        p1Lobby.setClient(p1Client);
+        p1Lobby.setEngine(engine);
+        Lobby p2Lobby = new Lobby(2, 2);
+        p2Lobby.setClient(p2Client);
+        p2Lobby.setEngine(engine);
+        players = new LinkedList<Player>();
+        players.add(p1);
+        players.add(p2);
+        p1Lobby.updatePlayers(players);
+        p2Lobby.updatePlayers(players);
+        
+        assertTrue(p1Lobby.isFirstPlayer());
+        assertFalse(p2Lobby.isFirstPlayer());
+    }
+    
+    public void testCheckPlayers()
+    {
+        players = new LinkedList<Player>();
+        players.add(p1);
+        players.add(p2);
+        
+        fiveLobby.updatePlayers(players);
+        
+        assertFalse(fiveLobby.checkPlayers("Shiro"));
+        assertTrue(fiveLobby.checkPlayers("Izuna"));
+    }
+        
+    public void testGetSelfName()
+    {
+        players = new LinkedList<Player>();
+        players.add(p1);
+        
+        fiveLobby.updatePlayers(players);
+        client.setPlayer(p1);
+        assertEquals("Shiro", fiveLobby.getSelfName());
+    }
+    
+}

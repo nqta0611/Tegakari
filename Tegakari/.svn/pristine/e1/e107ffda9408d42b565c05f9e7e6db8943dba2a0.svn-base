@@ -1,0 +1,133 @@
+How many times would you like to run the server?
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: GREEK
+Sever adding Robot...
+Sever adding Robot...
+Readying game...
+In testing mode... Solution: Aphrodite, Apollo's Chariot, Athena's Forest
+Dealing clues
+	 card: Hera to player1 to player1
+	 card: Hermes to Robot1_Basic to Robot1_Basic
+	 card: Artemis to Robot2_Smart to Robot2_Smart
+	 card: Ares to player1 to player1
+	 card: Dionysus to Robot1_Basic to Robot1_Basic
+	 card: Eros' Wings to Robot2_Smart to Robot2_Smart
+	 card: Dionysus' Vineyard to player1 to player1
+	 card: Mount Olympus to Robot1_Basic to Robot1_Basic
+	 card: Poseidon's Ship to Robot2_Smart to Robot2_Smart
+	 card: Hermes Sandals to player1 to player1
+	 card: Hades' Underworld to Robot1_Basic to Robot1_Basic
+	 card: Phoebe's Moon to Robot2_Smart to Robot2_Smart
+	 card: Hades' Dogs to player1 to player1
+	 card: Athens to Robot1_Basic to Robot1_Basic
+	 card: Hephaestus' Volcano to Robot2_Smart to Robot2_Smart
+	 card: Poseidon's Ocean to player1 to player1
+	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+	 card: Atlas' Sky to Robot2_Smart to Robot2_Smart
+Dealing action
+	 give actionC(Snoop on any player's hand) to player1
+	 give actionC(Snoop on any player's hand) to Robot1_Basic
+	 give actionC(Snoop on any player's hand) to Robot2_Smart
+Dealing dest
+	 assign dest to player1
+	 assign dest to Robot1_Basic
+	 assign dest to Robot2_Smart
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Client disconnected
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: GREEK
+Sever adding Robot...
+Sever adding Robot...
+Sever adding Robot...
+Readying game...
+In testing mode... Solution: Aphrodite, Apollo's Chariot, Athena's Forest
+Dealing clues
+	 card: Hera to player1 to player1
+	 card: Hermes to Robot1_Basic to Robot1_Basic
+	 card: Artemis to Robot2_Basic to Robot2_Basic
+	 card: Ares to Robot3_Basic to Robot3_Basic
+	 card: Dionysus to player1 to player1
+	 card: Eros' Wings to Robot1_Basic to Robot1_Basic
+	 card: Dionysus' Vineyard to Robot2_Basic to Robot2_Basic
+	 card: Mount Olympus to Robot3_Basic to Robot3_Basic
+	 card: Poseidon's Ship to player1 to player1
+	 card: Hermes Sandals to Robot1_Basic to Robot1_Basic
+	 card: Hades' Underworld to Robot2_Basic to Robot2_Basic
+	 card: Phoebe's Moon to Robot3_Basic to Robot3_Basic
+	 card: Hades' Dogs to player1 to player1
+	 card: Athens to Robot1_Basic to Robot1_Basic
+	 card: Hephaestus' Volcano to Robot2_Basic to Robot2_Basic
+	 card: Poseidon's Ocean to Robot3_Basic to Robot3_Basic
+	 card: Athena's Horse to player1 to player1
+	 card: Atlas' Sky to Robot1_Basic to Robot1_Basic
+Dealing action
+	 give actionC(Snoop on any player's hand) to player1
+	 give actionC(Snoop on any player's hand) to Robot1_Basic
+	 give actionC(Snoop on any player's hand) to Robot2_Basic
+	 give actionC(Snoop on any player's hand) to Robot3_Basic
+Dealing dest
+	 assign dest to player1
+	 assign dest to Robot1_Basic
+	 assign dest to Robot2_Basic
+	 assign dest to Robot3_Basic
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Client disconnected
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: GREEK
+Sever adding Robot...
+Sever adding Robot...
+Sever adding Robot...
+Sever adding Robot...
+Readying game...
+In testing mode... Solution: Aphrodite, Apollo's Chariot, Athena's Forest
+Dealing clues
+	 card: Hera to player1 to player1
+	 card: Hermes to Robot1_Basic to Robot1_Basic
+	 card: Artemis to Robot2_Basic to Robot2_Basic
+	 card: Ares to Robot3_Basic to Robot3_Basic
+	 card: Dionysus to Robot4_Basic to Robot4_Basic
+	 card: Eros' Wings to player1 to player1
+	 card: Dionysus' Vineyard to Robot1_Basic to Robot1_Basic
+	 card: Mount Olympus to Robot2_Basic to Robot2_Basic
+	 card: Poseidon's Ship to Robot3_Basic to Robot3_Basic
+	 card: Hermes Sandals to Robot4_Basic to Robot4_Basic
+	 card: Hades' Underworld to player1 to player1
+	 card: Phoebe's Moon to Robot1_Basic to Robot1_Basic
+	 card: Hades' Dogs to Robot2_Basic to Robot2_Basic
+	 card: Athens to Robot3_Basic to Robot3_Basic
+	 card: Hephaestus' Volcano to Robot4_Basic to Robot4_Basic
+	 card: Poseidon's Ocean to player1 to player1
+	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+	 card: Atlas' Sky to Robot2_Basic to Robot2_Basic
+Dealing action
+	 give actionC(Snoop on any player's hand) to player1
+	 give actionC(Snoop on any player's hand) to Robot1_Basic
+	 give actionC(Snoop on any player's hand) to Robot2_Basic
+	 give actionC(Snoop on any player's hand) to Robot3_Basic
+	 give actionC(Snoop on any player's hand) to Robot4_Basic
+Dealing dest
+	 assign dest to player1
+	 assign dest to Robot1_Basic
+	 assign dest to Robot2_Basic
+	 assign dest to Robot3_Basic
+	 assign dest to Robot4_Basic
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Client disconnected

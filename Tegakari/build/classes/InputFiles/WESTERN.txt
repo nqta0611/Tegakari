@@ -1,0 +1,22 @@
+Suspect Helen image/Suspects-Helen.jpg FEMALE
+Suspect Ashley image/Suspects-Ashley.jpg FEMALE
+Suspect Catherine image/Suspects-Catherine.jpg FEMALE
+Suspect Bob image/Suspects-Bob.jpg MALE
+Suspect Steve image/Suspects-Steve.jpg MALE
+Suspect Texas image/Suspects-Texas.jpg MALE
+Suspect Helen image/Suspects-Helen.jpg FEMALE
+Vehicle Wagon image/Transportation-Wagon.jpg BLUE GROUND
+Vehicle Mustang image/Transportation-Mustang.jpg BLUE GROUND
+Vehicle Flying%Mustang image/Transportation-FlyingMustang.jpg BLUE FLYING
+Vehicle Ox image/Transportation-Ox.jpg RED GROUND
+Vehicle Bull image/Transportation-Bull.jpg RED GROUND
+Vehicle Speedwagon image/Transportation-Speedwagon.jpg RED FLYING
+Destination Bar image/Location-Bar.jpg NORTHERN EASTERN
+Destination Steve's%House image/Location-SteveHouse.jpg NORTHERN EASTERN
+Destination Piano%Bar image/Location-PianoBar.jpg SOUTHERN WESTERN
+Destination Farm image/Location-Farm.jpg SOUTHERN WESTERN
+Destination Town image/Location-Town.jpg SOUTHERN WESTERN
+Destination Wastelands image/Location-Wastelands.jpg NORTHERN WESTERN
+Destination Desert image/Location-Desert.jpg NORTHERN WESTERN
+Destination Catherine's%House image/Location-CatherineHouse.jpg SOUTHERN EASTERN
+Destination Graveyard image/Location-Graveyard.jpg SOUTHERN EASTERN

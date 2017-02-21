@@ -1,0 +1,28 @@
+51c51,58
+< Show me all your Vehicle Cards
+---
+> Client disconnected
+> **: The disconnect client was: player2
+> Replaced human player with Robot
+> 	Handling tip card
+> 	created robot tip logic
+> 	called respond to action, and got 1 card to show
+> 	 isALL, no need to send card message
+> Show me one northern Destination Card
+60,62c67,78
+< Client disconnected
+< **: The disconnect client was: player2
+< Replaced human player with Robot
+---
+> 	Handling tip card
+> 	created robot tip logic
+> 	called respond to action, and got 0 card to show
+> Show me one northern Destination Card
+> Robot turn
+> done drawing action card : class tegakari.PrivateTipCard
+> 
+> Begin player2's turn
+> player2 plays action card: Show me all your Vehicle Cards
+> 	Target Player:player1
+> 	Private Tip calls for multiple cards available. # of cards: 1
+> player2 has not found solution yet.

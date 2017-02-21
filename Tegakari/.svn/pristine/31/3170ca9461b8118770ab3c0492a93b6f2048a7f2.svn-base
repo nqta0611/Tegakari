@@ -1,0 +1,61 @@
+Player joined game
+Insert a username:
+player1
+Lobby name changed to: Tegakari: player1
+Player accepted
+TODO theme selection goes here
+TODO Robot addition goes here
+minimum number of players added, start game? y/n
+y
+Card Drawn
+The players still in the game are:
+player1
+player2
+player3
+player4
+Your Clue Cards are
+Aphrodite
+Artemis
+Hera
+Ares
+Mount Olympus
+Your Action Cards are
+Suggestion Card
+Suggestion Card
+What do you want to do? 
+Play action 1 enter 1
+Play action 2 enter 2
+Accuse enter a
+1
+Would you like to move (m) or suggest (s)?
+s
+Pick a suspect according to theme
+3
+Pick a vehicle according to theme
+3
+	 who has 5 Clue Card
+Clue 1: /image/GreeceImages/Transportation-ApollosChariot.jpg
+Clue 1: /image/GreeceImages/Transportation-AthenaHorse.jpg
+Clue 1: /image/GreeceImages/Transportation-ErosWings.jpg
+Would you like to accuse? y/n
+y
+Pick a suspect according to theme (1-6)
+1
+Pick a vehicle according to theme (1-6)
+1
+Pick a destination according to theme (1-9)
+1
+Are you sure to make this accusation: [Aphrodite] in a [Apollo's Chariot] at [Athena's Forest]
+Enter (y) to confirm, (n) to cancel
+y
+Your accusation:
+Aphrodite
+Apollo's Chariot
+Athena's Forest
+Which does not match the correct solution
+Hermes
+Hermes Sandals
+Athens
+You Lost The Game
+Showed to the player player2
+The Card Hera

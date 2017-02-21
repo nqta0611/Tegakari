@@ -1,0 +1,50 @@
+package integration_test;
+
+
+import org.uispec4j.*;
+import allguis.*;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+import tegakari.*;
+import java.util.*;
+import org.mockito.ArgumentCaptor;
+import static org.mockito.Mockito.*;
+import guiConsoleController.*;
+import junit.framework.TestCase;
+
+/**
+ *
+ * @author DeionLaw
+ */
+public class SleuthDialogControllerTest extends UISpecTestCase
+{
+    private SleuthDialog view;
+    private SleuthDialogController ctrl;
+    private SuperSleuthCard card;
+    
+    public SleuthDialogControllerTest(String testName)
+    {
+        super(testName);
+    }
+    
+    @Override
+    protected void setUp() throws Exception
+    {
+        super.setUp();
+        
+        card = new SuperSleuthCard(ClueType.VEHICLE, 
+                Attribute.FLYING, "/image/Action-SuperSleuthAir.jpg");
+        ctrl = new SleuthDialogController();
+        view = new SleuthDialog(new JFrame(), true, card, ctrl);
+        ctrl.setup(view, false);
+    }
+    
+    public void testKeyPress()
+    {
+        Window window = new Window(view);
+        ctrl.keyReleased(null);
+        ctrl.keyTyped(null);
+        window.typeKey(Key.SPACE);
+        assertFalse(window.isVisible());
+    }
+}

@@ -1,0 +1,108 @@
+51c51
+< In testing mode... Solution: Aphrodite, Apollo's Chariot, Athena's Forest
+---
+> Solution: Dionysus, Hades' Dogs, Phoebe's Moon
+53c53
+< 	 card: Hera to player1 to player1
+---
+> 	 card: Ares to player1 to player1
+55,60c55,56
+< 	 card: Artemis to Robot2_Basic to Robot2_Basic
+< 	 card: Ares to Robot3_Basic to Robot3_Basic
+< 	 card: Dionysus to player1 to player1
+< 	 card: Eros' Wings to Robot1_Basic to Robot1_Basic
+< 	 card: Dionysus' Vineyard to Robot2_Basic to Robot2_Basic
+< 	 card: Mount Olympus to Robot3_Basic to Robot3_Basic
+---
+> 	 card: Aphrodite to Robot2_Basic to Robot2_Basic
+> 	 card: Artemis to Robot3_Basic to Robot3_Basic
+62,65c58,61
+< 	 card: Hermes Sandals to Robot1_Basic to Robot1_Basic
+< 	 card: Hades' Underworld to Robot2_Basic to Robot2_Basic
+< 	 card: Phoebe's Moon to Robot3_Basic to Robot3_Basic
+< 	 card: Hades' Dogs to player1 to player1
+---
+> 	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+> 	 card: Hermes Sandals to Robot2_Basic to Robot2_Basic
+> 	 card: Hephaestus' Volcano to Robot3_Basic to Robot3_Basic
+> 	 card: Mount Olympus to player1 to player1
+67,70c63,70
+< 	 card: Hephaestus' Volcano to Robot2_Basic to Robot2_Basic
+< 	 card: Poseidon's Ocean to Robot3_Basic to Robot3_Basic
+< 	 card: Athena's Horse to player1 to player1
+< 	 card: Atlas' Sky to Robot1_Basic to Robot1_Basic
+---
+> 	 card: Hades' Underworld to Robot2_Basic to Robot2_Basic
+> 	 card: Athena's Forest to Robot3_Basic to Robot3_Basic
+> 	 card: Atlas' Sky to player1 to player1
+> 	 card: Poseidon's Ocean to Robot1_Basic to Robot1_Basic
+> 	 card: Dionysus' Vineyard to Robot2_Basic to Robot2_Basic
+> 	 card: Hera to Robot3_Basic to Robot3_Basic
+> 	 card: Apollo's Chariot to player1 to player1
+> 	 card: Eros' Wings to Robot1_Basic to Robot1_Basic
+72,75c72,75
+< 	 give actionC(Snoop on any player's hand) to player1
+< 	 give actionC(Snoop on any player's hand) to Robot1_Basic
+< 	 give actionC(Snoop on any player's hand) to Robot2_Basic
+< 	 give actionC(Snoop on any player's hand) to Robot3_Basic
+---
+> 	 give actionC(Show me one female Suspect Card) to player1
+> 	 give actionC(Make a Suggestion from ANY Destination) to Robot1_Basic
+> 	 give actionC(Make a Suggestion from ANY Destination) to Robot2_Basic
+> 	 give actionC(Make a Suggestion from ANY Destination) to Robot3_Basic
+96c96
+< In testing mode... Solution: Aphrodite, Apollo's Chariot, Athena's Forest
+---
+> Solution: Dionysus, Poseidon's Ship, Dionysus' Vineyard
+98,108c98
+< 	 card: Hera to player1 to player1
+< 	 card: Hermes to Robot1_Basic to Robot1_Basic
+< 	 card: Artemis to Robot2_Basic to Robot2_Basic
+< 	 card: Ares to Robot3_Basic to Robot3_Basic
+< 	 card: Dionysus to Robot4_Basic to Robot4_Basic
+< 	 card: Eros' Wings to player1 to player1
+< 	 card: Dionysus' Vineyard to Robot1_Basic to Robot1_Basic
+< 	 card: Mount Olympus to Robot2_Basic to Robot2_Basic
+< 	 card: Poseidon's Ship to Robot3_Basic to Robot3_Basic
+< 	 card: Hermes Sandals to Robot4_Basic to Robot4_Basic
+< 	 card: Hades' Underworld to player1 to player1
+---
+> 	 card: Hermes Sandals to player1 to player1
+110,115c100,115
+< 	 card: Hades' Dogs to Robot2_Basic to Robot2_Basic
+< 	 card: Athens to Robot3_Basic to Robot3_Basic
+< 	 card: Hephaestus' Volcano to Robot4_Basic to Robot4_Basic
+< 	 card: Poseidon's Ocean to player1 to player1
+< 	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+< 	 card: Atlas' Sky to Robot2_Basic to Robot2_Basic
+---
+> 	 card: Hephaestus' Volcano to Robot2_Basic to Robot2_Basic
+> 	 card: Poseidon's Ocean to Robot3_Basic to Robot3_Basic
+> 	 card: Atlas' Sky to Robot4_Basic to Robot4_Basic
+> 	 card: Hermes to player1 to player1
+> 	 card: Mount Olympus to Robot1_Basic to Robot1_Basic
+> 	 card: Artemis to Robot2_Basic to Robot2_Basic
+> 	 card: Apollo's Chariot to Robot3_Basic to Robot3_Basic
+> 	 card: Athena's Horse to Robot4_Basic to Robot4_Basic
+> 	 card: Aphrodite to player1 to player1
+> 	 card: Hades' Dogs to Robot1_Basic to Robot1_Basic
+> 	 card: Eros' Wings to Robot2_Basic to Robot2_Basic
+> 	 card: Hades' Underworld to Robot3_Basic to Robot3_Basic
+> 	 card: Athena's Forest to Robot4_Basic to Robot4_Basic
+> 	 card: Athens to player1 to player1
+> 	 card: Ares to Robot1_Basic to Robot1_Basic
+> 	 card: Hera to Robot2_Basic to Robot2_Basic
+118,121c118,121
+< 	 give actionC(Snoop on any player's hand) to Robot1_Basic
+< 	 give actionC(Snoop on any player's hand) to Robot2_Basic
+< 	 give actionC(Snoop on any player's hand) to Robot3_Basic
+< 	 give actionC(Snoop on any player's hand) to Robot4_Basic
+---
+> 	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to Robot1_Basic
+> 	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to Robot2_Basic
+> 	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to Robot3_Basic
+> 	 give actionC(Make a Suggestion from ANY Destination) to Robot4_Basic
+132d131
+< Client disconnected
+133a133
+> Client disconnected

@@ -1,0 +1,91 @@
+#Wed Nov 18 13:21:39 PST 2015
+excludes=
+file.reference.checkstyle-all-4.4.jar=lib/checkstyle-all-4.4.jar
+file.reference.junit-3.8.1.jar=lib/junit-3.8.1.jar
+file.reference.junit-4.10.jar=lib/junit-4.10.jar
+file.reference.junit.jar=lib/junit.jar
+file.reference.mockito-1.10.19.jar=lib/mockito-1.10.19.jar
+file.reference.ocsf231.zip=lib/ocsf231.zip
+file.reference.swing-layout-1.0.4.jar=lib/swing-layout-1.0.4.jar
+file.reference.uispec4j-jdk17.jar=lib/uispec4j-jdk17.jar
+jar.archive.disabled=${jnlp.enabled}
+jar.index=${jnlp.enabled}
+javac.deprecation=false
+build.test.results.dir=${build.dir}/test/results
+jnlp.codebase.type=no.codebase
+jnlp.descriptor=application
+jnlp.enabled=false
+jnlp.mixed.code=default
+jnlp.offline-allowed=false
+jnlp.signed=false
+jnlp.signing=
+jnlp.signing.alias=
+jnlp.signing.keystore=
+main.class=tegakari.Application
+run.classpath=\
+    ${javac.classpath}:\
+    ${build.classes.dir}
+javadoc.nonavbar=false
+run.test.classpath=\
+    ${javac.test.classpath}:\
+    ${build.test.classes.dir}:\
+    ${file.reference.junit.jar}
+annotation.processing.source.output=${build.generated.sources.dir}/ap-source-output
+javac.processorpath=\
+    ${javac.classpath}
+javac.target=1.7
+annotation.processing.processors.list=
+javadoc.noindex=false
+javadoc.additionalparam=
+includes=**
+build.classes.dir=${build.dir}/classes
+source.encoding=UTF-8
+javadoc.author=false
+test.src.dir=test
+build.dir=build
+build.test.classes.dir=${build.dir}/test/classes
+platform.active=default_platform
+javac.compilerargs=
+dist.jar=${dist.dir}/TegakariTrunk.jar
+javac.test.processorpath=${javac.test.classpath}
+javadoc.use=true
+build.sysclasspath=ignore
+debug.test.classpath=${run.test.classpath}
+dist.dir=dist
+build.classes.excludes=**/*.java,**/*.form
+javadoc.splitindex=true
+javadoc.encoding=${source.encoding}
+javac.source=1.7
+application.vendor=JMo
+junit.selected.version=4
+debug.classpath=${run.classpath}
+run.jvmargs=
+build.generated.dir=${build.dir}/generated
+jar.compress=false
+javac.test.classpath=\
+    ${javac.classpath}:\
+    ${build.classes.dir}:\
+    ${file.reference.junit-4.10.jar}
+javadoc.private=true
+annotation.processing.run.all.processors=true
+application.title=TegakariTrunk
+meta.inf.dir=${src.dir}/META-INF
+manifest.file=manifest.mf
+annotation.processing.enabled=true
+dist.javadoc.dir=${dist.dir}/javadoc
+src.dir=src
+mkdist.disabled=false
+endorsed.classpath=
+javac.classpath=\
+    ${libs.swing-layout.classpath}:\
+    ${file.reference.ocsf231.zip}:\
+    ${file.reference.mockito-1.10.19.jar}:\
+    ${file.reference.junit-3.8.1.jar}:\
+    ${file.reference.checkstyle-all-4.4.jar}:\
+    ${file.reference.swing-layout-1.0.4.jar}:\
+    ${file.reference.uispec4j-jdk17.jar}
+annotation.processing.enabled.in.editor=false
+build.generated.sources.dir=${build.dir}/generated-sources
+javadoc.version=false
+javadoc.windowtitle=
+javadoc.notree=false

@@ -1,0 +1,130 @@
+How many times would you like to run the server?		How many times would you like to run the server?
+Lobby phase							Lobby phase
+Started listening for clients					Started listening for clients
+Client connected						Client connected
+New Theme Selected: GREEK					New Theme Selected: GREEK
+Sever adding Robot...						Sever adding Robot...
+Sever adding Robot...						Sever adding Robot...
+Sever adding Robot...						Sever adding Robot...
+Readying game...						Readying game...
+In testing mode... Solution: Hermes, Hermes Sandals, Athens	In testing mode... Solution: Hermes, Hermes Sandals, Athens
+Dealing clues							Dealing clues
+	 card: Aphrodite to human to human				 card: Aphrodite to human to human
+	 card: Apollo's Chariot to Robot1_Basic to Robot1_Bas		 card: Apollo's Chariot to Robot1_Basic to Robot1_Bas
+	 card: Athena's Forest to Robot2_Basic to Robot2_Basi		 card: Athena's Forest to Robot2_Basic to Robot2_Basi
+	 card: Dionysus to Robot3_Basic to Robot3_Basic			 card: Dionysus to Robot3_Basic to Robot3_Basic
+	 card: Artemis to human to human				 card: Artemis to human to human
+	 card: Athena's Horse to Robot1_Basic to Robot1_Basic		 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+	 card: Poseidon's Ocean to Robot2_Basic to Robot2_Bas		 card: Poseidon's Ocean to Robot2_Basic to Robot2_Bas
+	 card: Poseidon's Ship to Robot3_Basic to Robot3_Basi		 card: Poseidon's Ship to Robot3_Basic to Robot3_Basi
+	 card: Hera to human to human					 card: Hera to human to human
+	 card: Eros' Wings to Robot1_Basic to Robot1_Basic		 card: Eros' Wings to Robot1_Basic to Robot1_Basic
+	 card: Atlas' Sky to Robot2_Basic to Robot2_Basic		 card: Atlas' Sky to Robot2_Basic to Robot2_Basic
+	 card: Hades' Underworld to Robot3_Basic to Robot3_Ba		 card: Hades' Underworld to Robot3_Basic to Robot3_Ba
+	 card: Ares to human to human					 card: Ares to human to human
+	 card: Hades' Dogs to Robot1_Basic to Robot1_Basic		 card: Hades' Dogs to Robot1_Basic to Robot1_Basic
+	 card: Dionysus' Vineyard to Robot2_Basic to Robot2_B		 card: Dionysus' Vineyard to Robot2_Basic to Robot2_B
+	 card: Hephaestus' Volcano to Robot3_Basic to Robot3_		 card: Hephaestus' Volcano to Robot3_Basic to Robot3_
+	 card: Mount Olympus to human to human				 card: Mount Olympus to human to human
+	 card: Phoebe's Moon to Robot1_Basic to Robot1_Basic		 card: Phoebe's Moon to Robot1_Basic to Robot1_Basic
+Dealing action							Dealing action
+	 give actionC(Make a Suggestion from Current Destinat		 give actionC(Make a Suggestion from Current Destinat
+	 give actionC(Make a Suggestion from Current Destinat		 give actionC(Make a Suggestion from Current Destinat
+	 give actionC(Make a Suggestion from Current Destinat		 give actionC(Make a Suggestion from Current Destinat
+	 give actionC(Make a Suggestion from ANY Destination)		 give actionC(Make a Suggestion from ANY Destination)
+Dealing dest							Dealing dest
+	 assign dest to human						 assign dest to human
+	 assign dest to Robot1_Basic					 assign dest to Robot1_Basic
+	 assign dest to Robot2_Basic					 assign dest to Robot2_Basic
+	 assign dest to Robot3_Basic					 assign dest to Robot3_Basic
+Sent table							Sent table
+Sent solution							Sent solution
+Sent GAME_READY							Sent GAME_READY
+Starting game...						Starting game...
+Game phase							Game phase
+
+
+
+
+
+Make a Suggestion from Current Destination or Move to Another	Make a Suggestion from Current Destination or Move to Another
+Robot turn							Robot turn
+done drawing action card : class tegakari.SuggestionCard	done drawing action card : class tegakari.SuggestionCard
+
+Begin Robot1_Basic's turn					Begin Robot1_Basic's turn
+Robot1_Basic plays action card: Make a Suggestion from Curren	Robot1_Basic plays action card: Make a Suggestion from Curren
+it is disprovable by Robot2_Basic				it is disprovable by Robot2_Basic
+Robot1_Basic has not found solution yet.			Robot1_Basic has not found solution yet.
+
+
+
+
+Handling clue card:						Handling clue card:
+	Robot2_Basic showing me Athena's Forest				Robot2_Basic showing me Athena's Forest
+	 marked : true , true						 marked : true , true
+	Finish robot turn						Finish robot turn
+Make a Suggestion from Current Destination or Move to Another	Make a Suggestion from Current Destination or Move to Another
+Robot turn							Robot turn
+done drawing action card : class tegakari.SuggestionCard	done drawing action card : class tegakari.SuggestionCard
+
+Begin Robot2_Basic's turn					Begin Robot2_Basic's turn
+Robot2_Basic plays action card: Make a Suggestion from Curren	Robot2_Basic plays action card: Make a Suggestion from Curren
+it is disprovable by human					it is disprovable by human
+Robot2_Basic has not found solution yet.			Robot2_Basic has not found solution yet.
+Handling clue card:						Handling clue card:
+	human showing me Aphrodite					human showing me Aphrodite
+	 marked : true , true						 marked : true , true
+	Finish robot turn						Finish robot turn
+Make a Suggestion from Current Destination or Move to Another	Make a Suggestion from Current Destination or Move to Another
+Robot turn							Robot turn
+done drawing action card : class tegakari.SuggestionCard	done drawing action card : class tegakari.SuggestionCard
+
+Begin Robot3_Basic's turn					Begin Robot3_Basic's turn
+Robot3_Basic plays action card: Make a Suggestion from ANY De	Robot3_Basic plays action card: Make a Suggestion from ANY De
+it is disprovable by human					it is disprovable by human
+Robot3_Basic has not found solution yet.			Robot3_Basic has not found solution yet.
+Handling clue card:						Handling clue card:
+	human showing me Aphrodite					human showing me Aphrodite
+	 marked : true , true						 marked : true , true
+	Finish robot turn						Finish robot turn
+Make a Suggestion from Current Destination or Move to Another	Make a Suggestion from Current Destination or Move to Another
+Robot turn							Robot turn
+done drawing action card : class tegakari.SuggestionCard	done drawing action card : class tegakari.SuggestionCard
+
+Begin Robot1_Basic's turn					Begin Robot1_Basic's turn
+Robot1_Basic plays action card: Make a Suggestion from Curren	Robot1_Basic plays action card: Make a Suggestion from Curren
+it is disprovable by Robot2_Basic				it is disprovable by Robot2_Basic
+Robot1_Basic has not found solution yet.			Robot1_Basic has not found solution yet.
+
+
+
+
+Handling clue card:						Handling clue card:
+	Robot2_Basic showing me Athena's Forest				Robot2_Basic showing me Athena's Forest
+	 marked : true , true						 marked : true , true
+	Finish robot turn						Finish robot turn
+Make a Suggestion from Current Destination or Move to Another	Make a Suggestion from Current Destination or Move to Another
+Robot turn							Robot turn
+done drawing action card : class tegakari.SuggestionCard	done drawing action card : class tegakari.SuggestionCard
+
+Begin Robot2_Basic's turn					Begin Robot2_Basic's turn
+Robot2_Basic plays action card: Make a Suggestion from Curren	Robot2_Basic plays action card: Make a Suggestion from Curren
+it is disprovable by human					it is disprovable by human
+Robot2_Basic has not found solution yet.			Robot2_Basic has not found solution yet.
+Handling clue card:						Handling clue card:
+	human showing me Aphrodite					human showing me Aphrodite
+	 marked : true , true						 marked : true , true
+	Finish robot turn						Finish robot turn
+Make a Suggestion from Current Destination or Move to Another	Make a Suggestion from Current Destination or Move to Another
+Robot turn							Robot turn
+done drawing action card : class tegakari.SuggestionCard	done drawing action card : class tegakari.SuggestionCard
+
+Begin Robot3_Basic's turn					Begin Robot3_Basic's turn
+Robot3_Basic plays action card: Make a Suggestion from Curren	Robot3_Basic plays action card: Make a Suggestion from Curren
+it is disprovable by human					it is disprovable by human
+Robot3_Basic has not found solution yet.			Robot3_Basic has not found solution yet.
+Handling clue card:						Handling clue card:
+	human showing me Aphrodite					human showing me Aphrodite
+	 marked : true , true						 marked : true , true
+	Finish robot turn						Finish robot turn
+Client disconnected						Client disconnected

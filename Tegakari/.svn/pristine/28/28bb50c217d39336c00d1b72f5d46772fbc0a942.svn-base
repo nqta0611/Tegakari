@@ -1,0 +1,139 @@
+package GUI_test;
+
+import org.uispec4j.*;
+import allguis.*;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+import tegakari.*;
+import java.util.*;
+import static junit.framework.Assert.assertFalse;
+import org.mockito.ArgumentCaptor;
+import static org.mockito.Mockito.*;
+import guiConsoleController.*;
+
+
+/**
+ * UISpec4J GUI Unit test for PrivateTipToDialog.
+ * 
+ * @author Chris Thibodeau - cathibod
+ */
+public class PrivateTipToDialogTest extends UISpecTestCase
+{
+    
+    private PrivateTipToDialog view;
+    private PrivateTipToDialogController ctrl;
+    private JFrame parent;
+    private List<Player> players;
+    private Player player1;
+    private Player player2;
+    private Player player3;
+    private Player player4;
+    
+    @Override
+    protected void setUp() throws Exception
+    {
+        super.setUp();
+        player1 = mock(HumanPlayer.class);
+        player2 = mock(HumanPlayer.class);
+        player3 = mock(HumanPlayer.class);
+        player4 = mock(HumanPlayer.class);
+        
+        when(player1.getName()).thenReturn("player1");
+        when(player2.getName()).thenReturn("player2");
+        when(player3.getName()).thenReturn("player3");
+        when(player4.getName()).thenReturn("player4");
+        
+        players = new ArrayList<Player>();
+        players.add(player1);
+        players.add(player2);
+        players.add(player3);
+        players.add(player4);
+        
+        ctrl = mock(PrivateTipToDialogController.class);
+        parent = new JFrame();
+        view = new PrivateTipToDialog(ctrl, parent, true, players);
+    }
+
+    public void testText()
+    {
+        System.out.println("testText");
+        Window window = new Window(view);
+        
+        TextBox descText = window.getTextBox("descText");
+        TextBox titleText = window.getTextBox("titleText");
+        
+        assertEquals("Private Tip ", titleText.getText());
+        assertEquals("Hand Private Tip card to, or click 1-4", descText.getText());
+    }
+    
+    /**
+     * Test of disableAll method, of class PrivateTipToDialog.
+     */
+    public void testDisableAll() 
+    {
+        System.out.println("disableAll");
+        Window window = new Window(view);
+        view.disableAll();
+        List<String> playerButtons = Arrays.asList("player1", "player2", 
+                "player3","player4");
+        
+        for(String button : playerButtons)
+        {
+            assertFalse(window.getButton(button).isEnabled());
+        }
+    }
+
+    /**
+     * Test of setOK method, of class PrivateTipToDialog.
+     */
+    public void testSetOK() {
+        System.out.println("setOK");
+        Window window = new Window(view);
+        
+        assertFalse(window.getButton("okButton").isEnabled());
+        view.setOK(true);
+        assertTrue(window.getButton("okButton").isEnabled());
+    }
+
+    /**
+     * Test of setButton method, of class PrivateTipToDialog.
+     */
+    public void testSetButton() {
+        System.out.println("setButton");
+        Window window = new Window(view);
+        
+        view.setButton(0,true);
+        view.setButton(1,false);
+        view.setButton(2,true);
+        view.setButton(3,true);
+        
+        assertTrue(window.getButton("player1").isEnabled());
+        assertFalse(window.getButton("player2").isEnabled());
+        assertTrue(window.getButton("player3").isEnabled());
+        assertTrue(window.getButton("player4").isEnabled());
+    }
+
+    /**
+     * Test of eraseWindow method, of class PrivateTipToDialog.
+     */
+    public void testEraseWindow() {
+        System.out.println("eraseWindow");
+        Window window = new Window(view);
+        
+        view.eraseWindow();
+        assertFalse(view.isVisible());
+    }
+    
+    public void testOKButton()
+    {
+        Window window = new Window(view);
+        Button okButton = window.getButton("okButton");
+        
+        view.setOK(true);
+        okButton.click();
+        ArgumentCaptor<ActionEvent> argument = ArgumentCaptor.forClass(ActionEvent.class);
+                
+        verify(ctrl).actionPerformed(argument.capture());
+        assertFalse(view.isVisible());
+    }
+}

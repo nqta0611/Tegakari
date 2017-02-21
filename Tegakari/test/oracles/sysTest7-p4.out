@@ -1,0 +1,41 @@
+Player joined game
+Insert a username:
+Lobby name changed to: Tegakari: player4
+Player accepted
+Cards that met the Private Tip condition:
+player3 played this Private Tip but you have no cards to show!
+Card Drawn
+The players still in the game are:
+player4
+player5
+player1
+player2
+player3
+
+Your Clue Cards are: 
+> Aphrodite
+> Aphrodite
+> Aphrodite
+Your Action Cards are: 
+> [1] Private Tip Card: Show me all your Vehicle Cards
+> [2] Private Tip Card: Show me one northern Destination Card
+What do you want to do? 
+> Play action 1 [enter 1]
+> Play action 2 [enter 2]
+> Accuse [enter 'a']
+1: player5
+2: player1
+3: player2
+4: player3
+Input which player you would like to send this card to
+player5 has no cards to show you.
+Would you like to accuse? y/n
+Ending turn
+Would you like to quit the application? enter yes [y] or no [n]
+player1 accuses:
+Aphrodite
+Apollo's Chariot
+Athena's Forest
+Which matches the correct solution
+Game Over
+Play again? Enter: (y/n)

@@ -1,0 +1,188 @@
+package integration_test;
+
+import org.uispec4j.*;
+import allguis.*;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+import tegakari.*;
+import java.util.*;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
+import guiConsoleController.*;
+import java.awt.event.KeyEvent;
+import org.uispec4j.interception.WindowInterceptor;
+import junit.framework.TestCase;
+
+/**
+ *
+ * @author DeionLaw
+ */
+public class AccusationControllerTest extends UISpecTestCase
+{
+    private AccusationDialog view;
+    private GameTable parent;
+    private Window window;
+    private tegakari.Table table;
+    private Theme theme;
+    private AccusationController ctrl;
+    private Scanner sc;
+    
+    public AccusationControllerTest(String testName)
+    {
+        super(testName);
+    }
+    
+    @Override
+    protected void setUp() throws Exception
+    {
+        super.setUp();
+        
+        theme = new Theme();
+        table = new tegakari.Table(theme);
+        table.buildActionDeck();
+        sc = new Scanner("");
+
+        Player self = new HumanPlayer("self");
+        Player p2 = new HumanPlayer("p2");
+        Player p3 = new HumanPlayer("p3");
+        Player p4 = new HumanPlayer("p4");
+        Queue<Player> players = new LinkedList();
+        players.add(self);
+        players.add(p2);
+        players.add(p3);
+        players.add(p4);
+        
+        GameTableController gameTableCtrl = new GameTableController();
+        GameState state = new GameState(players, self, table);
+        GameClient client = mock(GameClient.class);
+        GameEngine engine = new GameEngine(state, client);
+
+        self.setDestination(table.dealDM());
+        p2.setDestination(table.dealDM());
+        p3.setDestination(table.dealDM());
+        p4.setDestination(table.dealDM());
+        parent = new GameTable(gameTableCtrl, engine);
+        gameTableCtrl.setup(parent, engine, true, sc);
+        
+        ctrl = new AccusationController();
+        view = new AccusationDialog(ctrl, parent, true);
+        ctrl.setup(view, state);
+        window = new Window(view);
+    }
+    
+    public void testKeys()
+    {
+        window.getButton("vehicle1").click();
+        window.getButton("suspect1").click();
+        window.getButton("destination1").click();
+        assertTrue(ctrl.completeSolutionChosen());
+        ctrl.keyReleased(null);
+        ctrl.keyTyped(null);
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        assertFalse(ctrl.completeSolutionChosen());
+        window.getButton("vehicle1").click();
+        window.getButton("suspect1").click();
+        window.getButton("destination1").click();
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_SPACE,
+                KeyEvent.VK_SPACE, '0'));
+        assertEquals(theme.getSuspects().get(0), ctrl.showDialog().getSuspect());
+        assertEquals(theme.getVehicles().get(0), ctrl.showDialog().getVehicle());
+        assertEquals(theme.getDestinations().get(0), ctrl.showDialog().getDestination());
+    }
+    
+    public void testCancel()
+    {
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        assertFalse(view.isVisible());
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_SPACE,
+                KeyEvent.VK_SPACE, '0'));
+        
+        
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_1,
+                KeyEvent.VK_1, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_Q,
+                KeyEvent.VK_Q, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_S,
+                KeyEvent.VK_S, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_2,
+                KeyEvent.VK_2, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_W,
+                KeyEvent.VK_W, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_D,
+                KeyEvent.VK_D, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_3,
+                KeyEvent.VK_3, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_E,
+                KeyEvent.VK_E, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_F,
+                KeyEvent.VK_F, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_4,
+                KeyEvent.VK_4, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_R,
+                KeyEvent.VK_R, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_G,
+                KeyEvent.VK_G, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_5,
+                KeyEvent.VK_5, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_T,
+                KeyEvent.VK_T, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_H,
+                KeyEvent.VK_H, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_6,
+                KeyEvent.VK_6, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_Y,
+                KeyEvent.VK_Y, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_A,
+                KeyEvent.VK_A, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_J,
+                KeyEvent.VK_J, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_K,
+                KeyEvent.VK_K, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_L,
+                KeyEvent.VK_L, '0'));
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_Z,
+                KeyEvent.VK_Z, '0'));
+        assertFalse(view.isVisible());
+    }
+}

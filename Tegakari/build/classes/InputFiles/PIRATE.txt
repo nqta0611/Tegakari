@@ -1,0 +1,21 @@
+Suspect Anne%Bonny image/PirateImages/annebonnycard.jpg FEMALE
+Suspect Blackbeard image/PirateImages/blackbeardcard.jpg MALE
+Suspect Calico%Jack image/PirateImages/calicojackcard.jpg MALE
+Suspect Granuaile image/PirateImages/granuailecard.jpg FEMALE
+Suspect Sadie%the%Goat image/PirateImages/sadiethegoatcard.jpg FEMALE
+Suspect William%Kidd image/PirateImages/williamkiddcard.jpg MALE
+Vehicle Tartane image/PirateImages/tartanecard.jpg FLYING BLUE
+Vehicle Sloop image/PirateImages/sloopcard.jpg GROUND BLUE
+Vehicle Merchant%Man image/PirateImages/merchantmancard.jpg FLYING RED
+Vehicle Galleon image/PirateImages/galleoncard.jpg GROUND BLUE
+Vehicle Barque image/PirateImages/barquecard.jpg FLYING RED
+Vehicle Brig image/PirateImages/brigcard.jpg GROUND BLUE
+Destination Barbados image/PirateImages/barbadoscard.jpg SOUTHERN EASTERN
+Destination Gibraltar image/PirateImages/gibraltarcard.jpg NORTHERN EASTERN
+Destination Guadeloupe image/PirateImages/guadeloupecard.jpg SOUTHERN WESTERN
+Destination Havana image/PirateImages/havanacard.jpg NORTHERN EASTERN
+Destination Portroyale image/PirateImages/portroyalecard.jpg SOUTHERN WESTERN
+Destination San%Juan image/PirateImages/sanjuancard.jpg SOUTHERN EASTERN
+Destination Santiago image/PirateImages/santiagocard.jpg SOUTHERN EASTERN
+Destination Tortuga image/PirateImages/tortugacard.jpg NORTHERN EASTERN
+Destination Vera%Cruz image/PirateImages/veracruzcard.jpg SOUTHERN WESTERN

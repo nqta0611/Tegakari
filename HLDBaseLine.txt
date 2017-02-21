@@ -1,0 +1,593 @@
+Running javap on all files in Tegakari1.2/TegakariMasterTrunk/build/classes/tegakari/
+Compiled from "AccusationMessage.java"
+public class tegakari.AccusationMessage implements java.io.Serializable {
+  public tegakari.Solution getAccusation();
+  public tegakari.Player getCreator();
+  public tegakari.Player getShowTo();
+  public void setShowTo(tegakari.Player);
+  public tegakari.Solution getSolution();
+  public void setSolution(tegakari.Solution);
+  public boolean isCorrect();
+  public void setIsCorrect(boolean);
+  public tegakari.AccusationMessage(tegakari.Solution, tegakari.Solution, tegakari.Player);
+}
+Compiled from "ActionCard.java"
+public interface tegakari.ActionCard extends tegakari.Card {
+  public abstract java.lang.String getActionText();
+  public abstract java.lang.String getImagePath();
+}
+Compiled from "ActionCardLogic.java"
+public class tegakari.ActionCardLogic implements java.io.Serializable {
+  public tegakari.ActionCardLogic(tegakari.ActionCard, tegakari.Player);
+  public tegakari.Player getTurnPlayer();
+  public tegakari.ActionCard getActionCard();
+}
+Compiled from "Application.java"
+public class tegakari.Application {
+  public tegakari.Application();
+  public static void main(java.lang.String[]);
+}
+Compiled from "Attribute.java"
+public final class tegakari.Attribute extends java.lang.Enum<tegakari.Attribute> implements java.io.Serializable {
+  public static final tegakari.Attribute MALE;
+  public static final tegakari.Attribute FEMALE;
+  public static final tegakari.Attribute FLYING;
+  public static final tegakari.Attribute GROUND;
+  public static final tegakari.Attribute BLUE;
+  public static final tegakari.Attribute RED;
+  public static final tegakari.Attribute SOUTHERN;
+  public static final tegakari.Attribute WESTERN;
+  public static final tegakari.Attribute NORTHERN;
+  public static final tegakari.Attribute EASTERN;
+  public static tegakari.Attribute[] values();
+  public static tegakari.Attribute valueOf(java.lang.String);
+  public java.lang.String getDescription();
+  static {};
+}
+Compiled from "Card.java"
+public interface tegakari.Card extends java.io.Serializable {
+  public abstract java.lang.String getName();
+  public abstract boolean isShowing();
+  public abstract void makeFaceUp();
+  public abstract void makeFaceDown();
+}
+Compiled from "CardMessage.java"
+public class tegakari.CardMessage implements java.io.Serializable {
+  public tegakari.CardMessage(tegakari.Player, tegakari.Player, java.util.List<tegakari.Card>);
+  public tegakari.CardMessage(tegakari.Player, tegakari.Player, tegakari.Card);
+  public tegakari.Player getToPlayer();
+  public tegakari.Player getFromPlayer();
+  public java.util.List<tegakari.Card> getCards();
+}
+Compiled from "ClueCard.java"
+public interface tegakari.ClueCard extends tegakari.Card {
+  public abstract tegakari.ClueType getClueType();
+  public abstract java.lang.String getName();
+  public abstract java.util.List<tegakari.Attribute> getAttribute();
+  public abstract java.lang.String getImagePath();
+}
+Compiled from "ClueType.java"
+public final class tegakari.ClueType extends java.lang.Enum<tegakari.ClueType> implements java.io.Serializable {
+  public static final tegakari.ClueType SUSPECT;
+  public static final tegakari.ClueType VEHICLE;
+  public static final tegakari.ClueType DESTINATION;
+  public static tegakari.ClueType[] values();
+  public static tegakari.ClueType valueOf(java.lang.String);
+  public java.lang.String getDescription();
+  static {};
+}
+Compiled from "DMPile.java"
+public class tegakari.DMPile implements java.io.Serializable {
+  public tegakari.DMPile(tegakari.Theme);
+  public void shuffle();
+  public void addDM(tegakari.Destination);
+  public boolean removeFromPile(tegakari.Destination);
+  public tegakari.Destination removeTopCard();
+  public boolean containsDestination(tegakari.Destination);
+  public java.util.List<tegakari.Destination> getPile();
+  public void cleanPile();
+  public boolean equals(java.lang.Object);
+}
+Compiled from "Deck.java"
+public class tegakari.Deck<T extends tegakari.Card> implements java.io.Serializable {
+  public tegakari.Deck();
+  public void addCardToDeck(T);
+  public T dealCard();
+  public void shuffle();
+  public boolean isEmpty();
+  public int getCardCount();
+  public T peekTopCard();
+  public java.util.Stack<T> getDeck();
+  public boolean equals(java.lang.Object);
+}
+Compiled from "Destination.java"
+public class tegakari.Destination implements java.io.Serializable {
+  public final java.lang.String name;
+  public final java.lang.String imagePath;
+  public tegakari.Destination(java.lang.String, java.util.List<tegakari.Attribute>, java.lang.String);
+  public java.lang.String getName();
+  public java.util.List<tegakari.Attribute> getAttributes();
+  public boolean equals(java.lang.Object);
+}
+Compiled from "DestinationCard.java"
+public class tegakari.DestinationCard implements tegakari.ClueCard {
+  public tegakari.DestinationCard(tegakari.Destination);
+  public java.lang.String getName();
+  public boolean isShowing();
+  public tegakari.ClueType getClueType();
+  public java.util.List<tegakari.Attribute> getAttribute();
+  public void makeFaceUp();
+  public void makeFaceDown();
+  public java.lang.String getImagePath();
+  public boolean equals(java.lang.Object);
+  public tegakari.Destination getDestination();
+}
+Compiled from "Direction.java"
+public final class tegakari.Direction extends java.lang.Enum<tegakari.Direction> implements java.io.Serializable {
+  public static final tegakari.Direction LEFT;
+  public static final tegakari.Direction RIGHT;
+  public static tegakari.Direction[] values();
+  public static tegakari.Direction valueOf(java.lang.String);
+  public boolean isRight();
+  public java.lang.String toString();
+  static {};
+}
+Compiled from "GameClient.java"
+public class tegakari.GameClient extends com.lloseng.ocsf.client.AbstractClient implements java.io.Serializable {
+  public tegakari.GameClient(java.lang.String, int);
+  public void setLobby(tegakari.Lobby);
+  public void setGameEngine(tegakari.GameEngine);
+  public tegakari.Player getSelfPlayer();
+  public tegakari.Player getTurnPlayer();
+  public boolean isGameReady();
+  public tegakari.ThemeType getThemeType();
+  protected void handleMessageFromServer(java.lang.Object);
+  public void setPlayer(tegakari.Player);
+  protected void connectionClosed();
+  protected void connectionException(java.lang.Exception);
+  public tegakari.Solution getSolution();
+}
+Compiled from "GameEngine.java"
+public class tegakari.GameEngine implements java.io.Serializable {
+  public tegakari.GameEngine(tegakari.GameState, tegakari.GameClient);
+  public void setGameTableGUI(allguis.GameTable);
+  public tegakari.GameState getGameState();
+  public void addToLog(java.lang.String);
+  public boolean updateQueueForNextTurn();
+  public boolean isTurn();
+  public void beginTurn();
+  public void finishingTurn();
+  public void handleShowCard(tegakari.CardMessage);
+  public java.util.List<java.lang.Object> handleSnoop(tegakari.SnoopCard);
+  public java.util.List<java.lang.Object> handlePrivateTip(tegakari.PrivateTipCard);
+  public java.util.List<java.lang.Object> handleSleuth(tegakari.SuperSleuthCard);
+  public java.util.List<java.lang.Object> handleSuggestion(tegakari.SuggestionCardLogic);
+  public void handleSolution(tegakari.AccusationMessage);
+  public void handleHistoryLog(tegakari.HistoryLog);
+  public java.util.List<java.lang.Object> performAction(tegakari.ActionCard);
+  public void addCardMessage(tegakari.CardMessage);
+  public void endGame();
+  public void setLobby(tegakari.Lobby);
+}
+Compiled from "GameServer.java"
+public class tegakari.GameServer extends com.lloseng.ocsf.server.AbstractServer implements java.io.Serializable {
+  public tegakari.GameServer();
+  public static void main(java.lang.String[]);
+  public void resetServer();
+  public boolean startedGame();
+  public boolean gameOver();
+  public void setGameOver();
+  protected void clientConnected(com.lloseng.ocsf.server.ConnectionToClient);
+  protected void clientDisconnected(com.lloseng.ocsf.server.ConnectionToClient);
+  protected synchronized void handleMessageFromClient(java.lang.Object, com.lloseng.ocsf.server.ConnectionToClient);
+}
+Compiled from "GameState.java"
+public class tegakari.GameState extends java.util.Observable implements java.io.Serializable {
+  public tegakari.GameState(java.util.Queue<tegakari.Player>, tegakari.Player, tegakari.Table);
+  public void dealClueCardsToPlayers();
+  public void dealActionCardsToPlayers();
+  public void dealDMtoPlayers();
+  public java.util.Queue<tegakari.Player> getPlayers();
+  public void addToHistoryLog(java.lang.String);
+  public tegakari.Player getSelfPlayer();
+  public void setHistoryLog(tegakari.HistoryLog);
+  public boolean isEndTurn();
+  public void setEndTurn(boolean);
+  public void makeGameOver();
+  public void setPlayerOut(tegakari.Player);
+  public boolean isGameOver();
+  public boolean isInAction();
+  public void setInAction(boolean);
+  public tegakari.Player getTurnPlayer();
+  public boolean updateQueueForNextTurn();
+  public void setChangedGameState();
+  public tegakari.Table getTable();
+  public tegakari.HistoryLog getHistoryLog();
+  public boolean hasDrawn();
+  public void setHasDrawn(boolean);
+  public void drawActionCard();
+  public void drawAnActionCard();
+  public tegakari.ActionCard getChosenActionCard();
+  public void setChosenActionCard(tegakari.ActionCard);
+  public void reset();
+  public tegakari.Player getTargetPlayer();
+  public void setTargetPlayer(tegakari.Player);
+  public tegakari.ClueCard getRandomClueCard();
+  public void setRandomClueCard(tegakari.ClueCard);
+  public void setCardsToBeChosen(java.util.List<tegakari.ClueCard>);
+  public void addCardMessage(tegakari.CardMessage);
+  public tegakari.Solution getAccusation();
+  public void setAccusation(tegakari.Solution);
+  public tegakari.CardMessage removeCardMessage();
+}
+Compiled from "Hand.java"
+public class tegakari.Hand implements java.io.Serializable {
+  public tegakari.Hand();
+  public void addToHand(tegakari.Card);
+  public java.util.List<tegakari.ClueCard> getClueCards();
+  public java.util.List<tegakari.ActionCard> getActionCards();
+  public int getActionCardTotal();
+  public int getClueCardTotal();
+  public boolean remove(tegakari.Card);
+  public boolean equals(java.lang.Object);
+}
+Compiled from "HistoryLog.java"
+public class tegakari.HistoryLog implements java.io.Serializable {
+  public tegakari.HistoryLog();
+  public void addToLog(java.lang.String);
+  public java.lang.String toString();
+  public void clearLog();
+  public boolean isEmptyLog();
+}
+Compiled from "HumanPlayer.java"
+public class tegakari.HumanPlayer extends tegakari.Player implements java.io.Serializable {
+  public tegakari.HumanPlayer(java.lang.String, tegakari.Hand, tegakari.Destination);
+  public tegakari.HumanPlayer(java.lang.String);
+  public tegakari.ActionCard chooseActionCards();
+  public java.util.List<tegakari.ClueCard> chooseAccusation();
+}
+Compiled from "Lobby.java"
+public class tegakari.Lobby extends java.util.Observable implements java.io.Serializable {
+  public tegakari.Lobby(int);
+  public tegakari.Lobby(int, boolean);
+  public tegakari.Lobby(int, java.lang.String);
+  public boolean isStartGame();
+  public void setStartGame();
+  public void setTestingMode(java.lang.String, java.lang.String);
+  public void setThemeType(tegakari.ThemeType);
+  public void prepareGame(tegakari.Table);
+  public tegakari.ThemeType getThemeType();
+  public java.util.Queue<tegakari.Player> getPlayers();
+  public tegakari.GameEngine getGameEngine();
+  public int getNumPlayersToStart();
+  public void updatePlayers(java.util.Queue<tegakari.Player>);
+  public void readyGame();
+  public boolean isGameReady();
+  public boolean joinLobby();
+  public void sendPlayerToServer(java.lang.String);
+  public void signalGameReadyToOthers();
+  public void startGame();
+  public void quitLobby();
+  public boolean isFirstPlayer();
+  public boolean checkPlayers(java.lang.String);
+}
+Compiled from "Notepad.java"
+public class tegakari.Notepad implements java.io.Serializable {
+  public java.util.List<tegakari.Suspect> possibleSuspects;
+  public java.util.List<tegakari.Vehicle> possibleVehicles;
+  public java.util.List<tegakari.Destination> possibleDestinations;
+  public tegakari.Notepad();
+  public boolean isOpen();
+  public void setCell(int, int, java.lang.Object);
+  public java.lang.Object getCell(int, int);
+  public void openNotepad();
+  public void closeNotepad();
+  public void clearNotePad();
+  public boolean takeNote(tegakari.ClueCard, tegakari.Player);
+  public boolean hasSolution();
+  public void clearNotepad();
+}
+Compiled from "Player.java"
+public abstract class tegakari.Player implements java.io.Serializable {
+  public final java.lang.String name;
+  public tegakari.Player(java.lang.String, tegakari.Hand, tegakari.Destination);
+  public tegakari.Player(java.lang.String);
+  public java.util.List<tegakari.Card> getValidCardsSuggestion(tegakari.Solution);
+  public java.util.List<tegakari.Card> getValidCardsPrivateTip(tegakari.PrivateTipCard);
+  public tegakari.Card giveRandomCardFromHand();
+  public int getHandSize();
+  public java.util.List<tegakari.ClueCard> getClueCards();
+  public java.util.List<tegakari.ActionCard> getActionCards();
+  public abstract tegakari.ActionCard chooseActionCards();
+  public abstract java.util.List<tegakari.ClueCard> chooseAccusation();
+  public boolean isInGame();
+  public void setPlayerLoses();
+  public void openNotePad();
+  public void closeNotepad();
+  public void markNotepad(int, int);
+  public tegakari.Hand getHand();
+  public tegakari.Destination setDestination(tegakari.Destination);
+  public tegakari.Destination getDestination();
+  public boolean equals(java.lang.Object);
+  public static boolean cardListsEqual(java.util.List<tegakari.Card>, java.util.List<tegakari.Card>);
+  public boolean equalsName(tegakari.Player);
+}
+Compiled from "PrivateTipCard.java"
+public class tegakari.PrivateTipCard implements tegakari.ActionCard {
+  public final java.lang.String imagePath;
+  public tegakari.PrivateTipCard(tegakari.ClueType, java.lang.String);
+  public tegakari.PrivateTipCard(tegakari.ClueType, tegakari.Attribute, java.lang.String);
+  public boolean isAll();
+  public java.lang.String getActionText();
+  public tegakari.ClueType getClueType();
+  public tegakari.Attribute getAttribute();
+  public java.lang.String getName();
+  public boolean isShowing();
+  public void makeFaceUp();
+  public void makeFaceDown();
+  public java.lang.String getImagePath();
+  public boolean equals(java.lang.Object);
+}
+Compiled from "PrivateTipCardLogic.java"
+public class tegakari.PrivateTipCardLogic extends tegakari.ActionCardLogic {
+  public tegakari.PrivateTipCardLogic(tegakari.PrivateTipCard, tegakari.Player, tegakari.Player);
+  public java.util.List<tegakari.ClueCard> playPrivateTip(tegakari.Player);
+  public tegakari.Player getTargetPlayer();
+}
+Compiled from "Protocol.java"
+public final class tegakari.Protocol extends java.lang.Enum<tegakari.Protocol> implements java.io.Serializable {
+  public static final tegakari.Protocol GAME_READY;
+  public static final tegakari.Protocol GAME_START;
+  public static final tegakari.Protocol GAME_OVER;
+  public static final tegakari.Protocol ORDERED_CLUE_DECK;
+  public static final tegakari.Protocol ORDERED_ACTION_DECK;
+  public static final tegakari.Protocol PLAYER_OUT;
+  public static final tegakari.Protocol END_TURN;
+  public static final tegakari.Protocol BEGIN_TURN;
+  public static final tegakari.Protocol SUGGESTION_START;
+  public static final tegakari.Protocol SUGGESTION_VALID;
+  public static final tegakari.Protocol SUGGESTION_INVALID;
+  public static final tegakari.Protocol SUGGESTION_END;
+  public static final tegakari.Protocol TESTING_MODE;
+  public static final tegakari.Protocol PLAYER_DISCONNECTED_FROM_LOBBY;
+  public static final tegakari.Protocol SEND_PLAYERS;
+  public static tegakari.Protocol[] values();
+  public static tegakari.Protocol valueOf(java.lang.String);
+  static {};
+}
+Compiled from "Robot.java"
+public class tegakari.Robot extends tegakari.Player {
+  public tegakari.Robot(java.lang.String);
+  public tegakari.ActionCard chooseActionCards();
+  public java.util.List<tegakari.ClueCard> chooseAccusation();
+}
+Compiled from "RobotActionLogic.java"
+public interface tegakari.RobotActionLogic {
+  public abstract java.util.List<tegakari.ClueCard> responseToActionRequest(tegakari.ActionCard, tegakari.Notepad, tegakari.Player, tegakari.Player);
+  public abstract int benefitFromAction(tegakari.Notepad, tegakari.ActionCard);
+}
+Compiled from "RobotEngine.java"
+public class tegakari.RobotEngine {
+  public tegakari.RobotEngine(tegakari.Robot);
+  public boolean takeNote(tegakari.Notepad, tegakari.Player, tegakari.ClueCard);
+  public java.util.List<java.lang.Object> responseToServerMessage(java.lang.Object);
+}
+Compiled from "RobotEngineInActive.java"
+public class tegakari.RobotEngineInActive {
+  public tegakari.RobotEngineInActive();
+  public tegakari.RobotState getState();
+  public void setState(tegakari.RobotState);
+  public tegakari.RobotEngine getEngine();
+  public void setEngine(tegakari.RobotEngine);
+  public tegakari.RobotEngineInIdle getEngineIdle();
+  public void setEngineInIdle(tegakari.RobotEngineInIdle);
+  public java.util.List<java.lang.Object> actionPerform(tegakari.ActionCard);
+  public java.util.List<java.lang.Object> handleClueCard(tegakari.CardMessage);
+}
+Compiled from "RobotEngineInIdle.java"
+public class tegakari.RobotEngineInIdle {
+  public tegakari.RobotEngineInIdle();
+  public tegakari.RobotState getState();
+  public void setState(tegakari.RobotState);
+  public tegakari.RobotEngine getEngine();
+  public void setEngine(tegakari.RobotEngine);
+  public tegakari.RobotEngineInActive getEngineActive();
+  public void setEngineActive(tegakari.RobotEngineInActive);
+  public java.util.List<java.lang.Object> handleActionRequest(tegakari.CardMessage);
+}
+Compiled from "RobotPrivateTipLogic.java"
+public class tegakari.RobotPrivateTipLogic implements tegakari.RobotActionLogic {
+  public tegakari.RobotPrivateTipLogic();
+  public java.util.List<tegakari.ClueCard> responseToActionRequest(tegakari.ActionCard, tegakari.Notepad, tegakari.Player, tegakari.Player);
+  public int benefitFromAction(tegakari.Notepad, tegakari.ActionCard);
+  public tegakari.Player chooseTargetPlayer(tegakari.Notepad, tegakari.ActionCard);
+  public java.util.List<tegakari.ClueCard> playPrivateTip(tegakari.Notepad, tegakari.Player);
+}
+Compiled from "RobotSleuthLogic.java"
+public class tegakari.RobotSleuthLogic implements tegakari.RobotActionLogic {
+  public tegakari.SuperSleuthCard card;
+  public tegakari.RobotSleuthLogic();
+  public java.util.List<tegakari.ClueCard> responseToActionRequest(tegakari.ActionCard, tegakari.Notepad, tegakari.Player, tegakari.Player);
+  public int benefitFromAction(tegakari.Notepad, tegakari.ActionCard);
+  public java.util.List<tegakari.ClueCard> playSleuth(tegakari.Notepad, tegakari.ActionCard);
+}
+Compiled from "RobotSnoopLogic.java"
+public class tegakari.RobotSnoopLogic implements tegakari.RobotActionLogic {
+  public tegakari.RobotSnoopLogic();
+  public java.util.List<tegakari.ClueCard> responseToActionRequest(tegakari.ActionCard, tegakari.Notepad, tegakari.Player, tegakari.Player);
+  public int benefitFromAction(tegakari.Notepad, tegakari.ActionCard);
+  public tegakari.Player chooseTargetPlayer(tegakari.Notepad, tegakari.ActionCard);
+  public tegakari.ClueCard playSnoop(tegakari.Notepad, tegakari.Player);
+}
+Compiled from "RobotState.java"
+public class tegakari.RobotState {
+  public tegakari.RobotState(java.util.Queue<tegakari.Player>, tegakari.Player, tegakari.Player);
+  public boolean updateTurnPlayer();
+  public tegakari.Player getTurnPlayer();
+}
+Compiled from "RobotSuggestionLogic.java"
+public class tegakari.RobotSuggestionLogic implements tegakari.RobotActionLogic {
+  public tegakari.RobotSuggestionLogic();
+  public java.util.List<tegakari.ClueCard> responseToActionRequest(tegakari.ActionCard, tegakari.Notepad, tegakari.Player, tegakari.Player);
+  public int benefitFromAction(tegakari.Notepad, tegakari.ActionCard);
+  public tegakari.SuggestionCardLogic playSuggestion(tegakari.Notepad);
+  public tegakari.Destination playMove(tegakari.Notepad);
+}
+Compiled from "SnoopCard.java"
+public class tegakari.SnoopCard implements tegakari.ActionCard {
+  public final java.lang.String imagePath;
+  public tegakari.SnoopCard(java.lang.String);
+  public tegakari.SnoopCard(tegakari.Direction, java.lang.String);
+  public tegakari.Direction getDirection();
+  public java.lang.String getActionText();
+  public boolean isAllSnoop();
+  public java.lang.String getName();
+  public boolean isShowing();
+  public void makeFaceUp();
+  public void makeFaceDown();
+  public java.lang.String getImagePath();
+}
+Compiled from "SnoopCardLogic.java"
+public class tegakari.SnoopCardLogic extends tegakari.ActionCardLogic {
+  public tegakari.SnoopCardLogic(tegakari.SnoopCard, tegakari.Player);
+  public java.util.List<tegakari.ClueCard> playSnoop(tegakari.Player);
+}
+Compiled from "Solution.java"
+public class tegakari.Solution implements java.io.Serializable {
+  public tegakari.Solution(tegakari.Suspect, tegakari.Vehicle, tegakari.Destination);
+  public tegakari.Suspect getSuspect();
+  public tegakari.Vehicle getVehicle();
+  public tegakari.Destination getDestination();
+  public boolean equals(java.lang.Object);
+  public java.lang.String toString();
+}
+Compiled from "SuggestionCard.java"
+public class tegakari.SuggestionCard implements tegakari.ActionCard {
+  public final java.lang.String imagePath;
+  public tegakari.SuggestionCard(boolean, java.lang.String);
+  public java.lang.String getActionText();
+  public boolean isCurrentSuggestion();
+  public java.lang.String getName();
+  public boolean isShowing();
+  public void makeFaceUp();
+  public void makeFaceDown();
+  public java.lang.String getImagePath();
+}
+Compiled from "SuggestionCardLogic.java"
+public class tegakari.SuggestionCardLogic extends tegakari.ActionCardLogic {
+  public tegakari.SuggestionCardLogic(tegakari.SuggestionCard, tegakari.Player, tegakari.Destination, tegakari.Solution);
+  public void swapDMWithPlayer(tegakari.Player, tegakari.Player);
+  public boolean isDisprovable(java.util.Queue<tegakari.Player>);
+  public java.util.List<tegakari.ClueCard> disprove(tegakari.Player);
+  public tegakari.Player getDisprover();
+  public void swapDMWithTable(tegakari.Table, tegakari.Player);
+  public tegakari.Solution getGuess();
+  public boolean isMoved();
+  public tegakari.Destination getDestination();
+}
+Compiled from "SuperSleuthCard.java"
+public class tegakari.SuperSleuthCard implements tegakari.ActionCard {
+  public final java.lang.String imagePath;
+  public tegakari.SuperSleuthCard(tegakari.ClueType, tegakari.Attribute, java.lang.String);
+  public java.lang.String getActionText();
+  public tegakari.ClueType getClueType();
+  public tegakari.Attribute getAttribute();
+  public java.lang.String getName();
+  public boolean isShowing();
+  public void makeFaceUp();
+  public void makeFaceDown();
+  public java.lang.String getImagePath();
+}
+Compiled from "SuperSleuthCardLogic.java"
+public class tegakari.SuperSleuthCardLogic extends tegakari.ActionCardLogic {
+  public tegakari.SuperSleuthCardLogic(tegakari.SuperSleuthCard, tegakari.Player);
+  public java.util.List<tegakari.ClueCard> playSuperSleuth(tegakari.Player);
+}
+Compiled from "Suspect.java"
+public class tegakari.Suspect implements java.io.Serializable {
+  public final java.lang.String name;
+  public final java.lang.String imagePath;
+  public tegakari.Suspect(java.lang.String, java.util.List<tegakari.Attribute>, java.lang.String);
+  public java.lang.String getName();
+  public java.util.List<tegakari.Attribute> getAttributes();
+  public boolean equals(java.lang.Object);
+}
+Compiled from "SuspectCard.java"
+public class tegakari.SuspectCard implements tegakari.ClueCard {
+  public tegakari.SuspectCard(tegakari.Suspect);
+  public java.lang.String getName();
+  public java.util.List<tegakari.Attribute> getAttribute();
+  public boolean isShowing();
+  public tegakari.ClueType getClueType();
+  public void makeFaceUp();
+  public void makeFaceDown();
+  public java.lang.String getImagePath();
+  public boolean equals(java.lang.Object);
+  public tegakari.Suspect getSuspect();
+}
+Compiled from "Table.java"
+public class tegakari.Table implements java.io.Serializable {
+  public tegakari.Table(tegakari.Theme);
+  public tegakari.Theme getTheme();
+  public void buildActionDeck();
+  public void shuffleActionDeck();
+  public void shuffleDM();
+  public void buildOrderedActionDeck(java.lang.String);
+  public void buildClueDeck();
+  public void shuffleClueDeck();
+  public void buildOrderedClueDeck(java.lang.String);
+  public tegakari.ClueCard dealClueCard();
+  public tegakari.ActionCard dealActionCard();
+  void buildOrderedDMPile(java.lang.String);
+  public tegakari.Destination dealDM();
+  public void exchangeDM(tegakari.Player, tegakari.Destination);
+  public void addtoDiscardPile(tegakari.ActionCard);
+  public void rebuildActionDeckFromDiscardPile();
+  public java.util.List<tegakari.Destination> getPile();
+  public tegakari.Deck<tegakari.ActionCard> getActionDeck();
+  public tegakari.Deck<tegakari.ClueCard> getClueDeck();
+  public tegakari.Deck<tegakari.ActionCard> getDiscardPile();
+  public tegakari.Solution makeSolution();
+  public boolean equals(java.lang.Object);
+}
+Compiled from "Theme.java"
+public class tegakari.Theme implements java.io.Serializable {
+  public tegakari.Theme();
+  public tegakari.Theme(tegakari.ThemeType);
+  public java.util.List<tegakari.Suspect> getSuspects();
+  public java.util.List<tegakari.Vehicle> getVehicles();
+  public java.util.List<tegakari.Destination> getDestinations();
+  public void changeThemeType(tegakari.ThemeType);
+}
+Compiled from "ThemeType.java"
+public final class tegakari.ThemeType extends java.lang.Enum<tegakari.ThemeType> implements java.io.Serializable {
+  public static final tegakari.ThemeType ANIME;
+  public static final tegakari.ThemeType WESTERN;
+  public static final tegakari.ThemeType GREEK;
+  public static tegakari.ThemeType[] values();
+  public static tegakari.ThemeType valueOf(java.lang.String);
+  public java.lang.String getFilePath();
+  static {};
+}
+Compiled from "Vehicle.java"
+public class tegakari.Vehicle implements java.io.Serializable {
+  public final java.lang.String name;
+  public final java.lang.String imagePath;
+  public tegakari.Vehicle(java.lang.String, java.util.List<tegakari.Attribute>, java.lang.String);
+  public java.lang.String getName();
+  public java.util.List<tegakari.Attribute> getAttributes();
+  public boolean equals(java.lang.Object);
+}
+Compiled from "VehicleCard.java"
+public class tegakari.VehicleCard implements tegakari.ClueCard {
+  public tegakari.VehicleCard(tegakari.Vehicle);
+  public java.util.List<tegakari.Attribute> getAttribute();
+  public tegakari.ClueType getClueType();
+  public boolean isShowing();
+  public java.lang.String getName();
+  public void makeFaceUp();
+  public void makeFaceDown();
+  public java.lang.String getImagePath();
+  public boolean equals(java.lang.Object);
+  public tegakari.Vehicle getVehicle();
+}

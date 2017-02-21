@@ -1,0 +1,67 @@
+Player joined game
+Insert a username:
+Lobby name changed to: Tegakari: player2
+Player accepted
+Card Drawn
+The players still in the game are:
+player2
+player3
+player4
+player1
+
+Your Clue Cards are: 
+> Apollo's Chariot
+> Athena's Horse
+> Hades' Dogs
+> Poseidon's Ship
+> Phoebe's Moon
+Your Action Cards are: 
+> [1] Private Tip Card: Show me one red Vehicle Card
+> [2] Private Tip Card: Show me one red Vehicle Card
+What do you want to do? 
+> Play action 1 [enter 1]
+> Play action 2 [enter 2]
+> Accuse [enter 'a']
+1: player3
+2: player4
+3: player1
+Input which player you would like to send this card to
+player4 has no cards to show you.
+Would you like to accuse? y/n
+Ending turn
+Would you like to quit the application? enter yes [y] or no [n]
+Card Drawn
+The players still in the game are:
+player2
+player3
+player4
+player1
+
+Your Clue Cards are: 
+> Apollo's Chariot
+> Athena's Horse
+> Hades' Dogs
+> Poseidon's Ship
+> Phoebe's Moon
+Your Action Cards are: 
+> [1] Private Tip Card: Show me one red Vehicle Card
+> [2] Private Tip Card: Show me one northern Destination Card
+What do you want to do? 
+> Play action 1 [enter 1]
+> Play action 2 [enter 2]
+> Accuse [enter 'a']
+1: player3
+2: player4
+3: player1
+Input which player you would like to send this card to
+player4 has no cards to show you.
+Would you like to accuse? y/n
+Ending turn
+Would you like to quit the application? enter yes [y] or no [n]
+player1 accuses:
+Hermes
+Hermes Sandals
+Poseidon's Ocean
+Which matches the correct solution
+Game Over
+Play again? Enter: (y/n)

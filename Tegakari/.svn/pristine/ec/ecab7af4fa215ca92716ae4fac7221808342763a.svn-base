@@ -1,0 +1,124 @@
+How many times would you like to run the server?
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: GREEK
+Sever adding Robot...
+Sever adding Robot...
+Readying game...
+In testing mode... Solution: Hermes, Hermes Sandals, Athens
+Dealing clues
+	 card: Aphrodite to player1 to player1
+	 card: Apollo's Chariot to Robot1_Basic to Robot1_Basic
+	 card: Athena's Forest to Robot2_Basic to Robot2_Basic
+	 card: Dionysus to player1 to player1
+	 card: Artemis to Robot1_Basic to Robot1_Basic
+	 card: Athena's Horse to Robot2_Basic to Robot2_Basic
+	 card: Poseidon's Ocean to player1 to player1
+	 card: Poseidon's Ship to Robot1_Basic to Robot1_Basic
+	 card: Hera to Robot2_Basic to Robot2_Basic
+	 card: Eros' Wings to player1 to player1
+	 card: Atlas' Sky to Robot1_Basic to Robot1_Basic
+	 card: Hades' Underworld to Robot2_Basic to Robot2_Basic
+	 card: Ares to player1 to player1
+	 card: Hades' Dogs to Robot1_Basic to Robot1_Basic
+	 card: Dionysus' Vineyard to Robot2_Basic to Robot2_Basic
+	 card: Hephaestus' Volcano to player1 to player1
+	 card: Mount Olympus to Robot1_Basic to Robot1_Basic
+	 card: Phoebe's Moon to Robot2_Basic to Robot2_Basic
+Dealing action
+	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to player1
+	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to Robot1_Basic
+	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to Robot2_Basic
+Dealing dest
+	 assign dest to player1
+	 assign dest to Robot1_Basic
+	 assign dest to Robot2_Basic
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Client disconnected
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: PIRATE
+Sever adding Robot...
+Sever adding Robot...
+Readying game...
+In testing mode... Solution: William Kidd, Brig, Gibraltar
+Dealing clues
+	 card: Anne Bonny to player1 to player1
+	 card: Tartane to Robot1_Basic to Robot1_Basic
+	 card: Barbados to Robot2_Basic to Robot2_Basic
+	 card: Sadie the Goat to player1 to player1
+	 card: Blackbeard to Robot1_Basic to Robot1_Basic
+	 card: Sloop to Robot2_Basic to Robot2_Basic
+	 card: Vera Cruz to player1 to player1
+	 card: Barque to Robot1_Basic to Robot1_Basic
+	 card: Calico Jack to Robot2_Basic to Robot2_Basic
+	 card: Merchant Man to player1 to player1
+	 card: Guadeloupe to Robot1_Basic to Robot1_Basic
+	 card: Portroyale to Robot2_Basic to Robot2_Basic
+	 card: Granuaile to player1 to player1
+	 card: Galleon to Robot1_Basic to Robot1_Basic
+	 card: Havana to Robot2_Basic to Robot2_Basic
+	 card: San Juan to player1 to player1
+	 card: Santiago to Robot1_Basic to Robot1_Basic
+	 card: Tortuga to Robot2_Basic to Robot2_Basic
+Dealing action
+	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to player1
+	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to Robot1_Basic
+	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to Robot2_Basic
+Dealing dest
+	 assign dest to player1
+	 assign dest to Robot1_Basic
+	 assign dest to Robot2_Basic
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Client disconnected
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: WHITEHOUSE
+Sever adding Robot...
+Sever adding Robot...
+Readying game...
+In testing mode... Solution: Laura, Motorcycle, Everglades
+Dealing clues
+	 card: Condi to player1 to player1
+	 card: Airforce One to Robot1_Basic to Robot1_Basic
+	 card: Dry Tortugas to Robot2_Basic to Robot2_Basic
+	 card: Cheney to player1 to player1
+	 card: Coulter to Robot1_Basic to Robot1_Basic
+	 card: Blimp to Robot2_Basic to Robot2_Basic
+	 card: Yosemite to player1 to player1
+	 card: Chopper to Robot1_Basic to Robot1_Basic
+	 card: Dubya to Robot2_Basic to Robot2_Basic
+	 card: Humvee to player1 to player1
+	 card: Grand Canyon to Robot1_Basic to Robot1_Basic
+	 card: Olympic to Robot2_Basic to Robot2_Basic
+	 card: Karl to player1 to player1
+	 card: Motorcade to Robot1_Basic to Robot1_Basic
+	 card: Joshua Tree to Robot2_Basic to Robot2_Basic
+	 card: Shenandoah to player1 to player1
+	 card: Smokey Mountains to Robot1_Basic to Robot1_Basic
+	 card: Yellowstone to Robot2_Basic to Robot2_Basic
+Dealing action
+	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to player1
+	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to Robot1_Basic
+	 give actionC(Make a Suggestion from Current Destination or Move to Another Destination) to Robot2_Basic
+Dealing dest
+	 assign dest to player1
+	 assign dest to Robot1_Basic
+	 assign dest to Robot2_Basic
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Client disconnected

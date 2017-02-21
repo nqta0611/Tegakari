@@ -1,0 +1,85 @@
+Lobby phase
+Started listening for clients
+Client connected
+Client connected
+Client connected
+Client connected
+New Theme Selected: GREEK
+Readying game...
+In testing mode... Solution: Hermes, Hermes Sandals, Poseidon's Ocean
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Client disconnected
+**: The disconnect client was: player4
+Dealing clues
+	 card: Aphrodite to player1 to player1
+	 card: Apollo's Chariot to player2 to player2
+	 card: Athens to player3 to player3
+	 card: Dionysus to player4 to player4
+	 card: Artemis to player1 to player1
+	 card: Athena's Horse to player2 to player2
+	 card: Atlas' Sky to player3 to player3
+	 card: Eros' Wings to player4 to player4
+	 card: Hera to player1 to player1
+	 card: Hades' Dogs to player2 to player2
+	 card: Hades' Underworld to player3 to player3
+	 card: Athena's Forest to player4 to player4
+	 card: Ares to player1 to player1
+	 card: Poseidon's Ship to player2 to player2
+	 card: Mount Olympus to player3 to player3
+	 card: Dionysus' Vineyard to player4 to player4
+	 card: Hephaestus' Volcano to player1 to player1
+	 card: Phoebe's Moon to player2 to player2
+Dealing action
+	 give actionC(Show me one red Vehicle Card) to player1
+	 give actionC(Show me one red Vehicle Card) to player2
+	 give actionC(Show me all your Vehicle Cards) to player3
+	 give actionC(Show me all your Vehicle Cards) to player4
+Dealing dest
+	 assign dest to player1
+	 assign dest to player2
+	 assign dest to player3
+	 assign dest to player4
+Replaced human player with Robot
+Handling CardMessage, card sent to player4
+its an action card
+in ilde handling ActionRequest
+	Handling tip card
+	created robot tip logic
+	called respond to action, and got 0 card to show
+Handling CardMessage, card sent to player4
+its an action card
+in ilde handling ActionRequest
+	Handling tip card
+	created robot tip logic
+	called respond to action, and got 0 card to show
+Handling CardMessage, card sent to player4
+its an action card
+in ilde handling ActionRequest
+	Handling tip card
+	created robot tip logic
+	called respond to action, and got 1 card to show
+	 isALL, no need to send card message
+Show me all your Vehicle Cards
+Robot turn
+done drawing action card : class tegakari.PrivateTipCard
+
+Begin player4's turn
+> (Before) Ptip Self player:player3, targ: player4
+> (After) Ptip Self player:player3, targ: player1
+> (Before) Ptip Self player:player3, targ: player4
+> (After) Ptip Self player:player3, targ: player1
+> (Before) Ptip Self player:player3, targ: player4
+> (After) Ptip Self player:player3, targ: player1
+Will play action card: Show me all your Vehicle Cards
+in actionPerform :Show me all your Vehicle Cards
+	in performTip Show me all your Vehicle Cards
+	target Player player1
+	 added historyLog
+	 isALL tip
+	 # of clues: 0
+Not found solution yet
+Handling CardMessage, card sent to player1

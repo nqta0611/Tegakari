@@ -1,0 +1,551 @@
+package allguis;
+
+import guiConsoleController.LobbyController;
+import guiConsoleController.ChooseThemeController;
+import guiConsoleController.CreateRobotController;
+import guiConsoleController.GameTableController;
+import java.util.ArrayDeque;
+import java.util.Observable;
+import java.util.Observer;
+import java.util.Queue;
+import javax.swing.JLabel;
+import javax.swing.ToolTipManager;
+import tegakari.*;
+
+/**
+ * Window for the Lobby of the game
+ *
+ * @author anhnguyen
+ */
+public class LobbyGUI extends javax.swing.JFrame implements Observer
+{
+    /**
+     * 
+     */
+    private ChooseThemeController chooseThemeCtrl = new ChooseThemeController();
+    /**
+     * A chooseThemeDialog
+     */
+    private ChooseThemeDialog chooseTheme;
+
+    /**
+     * A CreateRobotDialog
+     */
+    private CreateRobotDialog addRobot;
+    /**
+     * queue of players in the lobby, starting from the first player
+     */
+    private Queue<Player> players;
+    /**
+     * the first player in the lobby
+     */
+    private Player firstPlayer;
+    /**
+     * the lobby model
+     */
+    private Lobby lobby;
+    /**
+     * the labels that player names will fill
+     */
+    private JLabel[] playersNameText;
+    
+    private LobbyController ctrl;
+    
+    /**
+     * Creates new form LobbyGUI
+     *
+     * @param lobby the lobby model to use for displaying
+     * @param ctrl controller, eventHandler for LobbyGUI
+     */
+    public LobbyGUI(Lobby lobby, LobbyController ctrl)
+    {
+        initComponents();
+        this.setTitle("Tegakari");
+        this.setLocationRelativeTo(null);
+        this.lobby = lobby;
+        this.ctrl = ctrl;
+        JLabel[] tempArray =
+        {
+            player1NameText, player2NameText, player3NameText, player4NameText, player5NameText
+        };
+        playersNameText = tempArray;
+
+        ToolTipManager.sharedInstance().setDismissDelay(Integer.MAX_VALUE);
+        // create the dialog
+        
+        CreateRobotController robotCtrl = new CreateRobotController();
+        addRobot = new CreateRobotDialog(this, true, lobby, robotCtrl);
+        robotCtrl.setup(false, addRobot);
+        
+        addRobot.setLocationRelativeTo(this);
+        
+        this.addKeyListener(ctrl);
+        //invisibleButtonForTesting.setVisible(false);
+        invisibleButtonForTesting.setName("invisible");
+        //invisibleButtonForTesting.setSize(0, 0);
+        invisibleButtonForTesting.addActionListener(ctrl);
+        invisibleButtonForTesting.setActionCommand("invisible");
+        
+        themeButton.setEnabled(false);
+        themeButton.addActionListener(ctrl);
+        themeButton.setActionCommand("Theme");
+        
+        robotButton.setEnabled(false);
+        robotButton.addActionListener(ctrl);
+        robotButton.setActionCommand("Robot");
+        
+        startButton.addActionListener(ctrl);
+        startButton.setActionCommand("Start");
+        setNames();
+        
+        chooseTheme = new ChooseThemeDialog(this, true, chooseThemeCtrl);
+        chooseTheme.setLocationRelativeTo(this);
+        chooseThemeCtrl.setup(false, chooseTheme, lobby);
+        
+        this.setFocusable(true);
+    }
+
+    /**
+     * Enabling robot button.
+     * 
+     * @param enable is enabled
+     */
+    public void enableRobotButton(boolean enable)
+    {
+        robotButton.setEnabled(enable);
+    }
+    
+    private void setNames()
+    {
+        gameTitle.setName("gameTitle");
+        helpText.setName("helpText");
+        jLabel1.setName("jLabel1");
+        player1NameText.setName("player1NameText");
+        player1PrefixText.setName("player1PrefixText");
+        player2NameText.setName("player2NameText");
+        player2PrefixText.setName("player2PrefixText");
+        player3NameText.setName("player3NameText");
+        player3PrefixText.setName("player3PrefixText");
+        player4NameText.setName("player4NameText");
+        player4PrefixText.setName("player4PrefixText");
+        player5NameText.setName("player5NameText");
+        player5PrefixText.setName("player5PrefixText");
+        playersNeededText.setName("playersNeededText");
+        robotButton.setName("robotButton");
+        startButton.setName("startButton");
+        themeButton.setName("themeButton");
+        titleText.setName("titleText");
+        waitingforPlayersText.setName("waitingforPlayersText");
+    }
+    
+    /**
+     * Set enabled.
+     * 
+     * @param set is enabled
+     */
+    public void startSetEnabled(boolean set)
+    {
+        startButton.setEnabled(set);
+    }
+    
+    /**
+     * Sets theme visible.
+     */
+    public void themeVisible()
+    {
+        chooseTheme.setVisible(true);
+    }
+    
+    /**
+     * Sets robot visible.
+     */
+    public void robotVisible()
+    {
+        addRobot.setVisible(true);
+    }
+    /**
+     * NetBeans generated code
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        titleText = new javax.swing.JLabel();
+        waitingforPlayersText = new javax.swing.JLabel();
+        player1PrefixText = new javax.swing.JLabel();
+        player2PrefixText = new javax.swing.JLabel();
+        player3PrefixText = new javax.swing.JLabel();
+        player4PrefixText = new javax.swing.JLabel();
+        playersNeededText = new javax.swing.JLabel();
+        startButton = new javax.swing.JButton();
+        themeButton = new javax.swing.JButton();
+        player2NameText = new javax.swing.JLabel();
+        player3NameText = new javax.swing.JLabel();
+        player4NameText = new javax.swing.JLabel();
+        player1NameText = new javax.swing.JLabel();
+        gameTitle = new javax.swing.JLabel();
+        helpText = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        robotButton = new javax.swing.JButton();
+        player5NameText = new javax.swing.JLabel();
+        player5PrefixText = new javax.swing.JLabel();
+        invisibleButtonForTesting = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        titleText.setFont(new java.awt.Font("Monospaced", 3, 48)); // NOI18N
+        titleText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleText.setText("Game Lobby");
+
+        waitingforPlayersText.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        waitingforPlayersText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        waitingforPlayersText.setText("Waiting for Players . . . ");
+
+        player1PrefixText.setText("Player 1:");
+
+        player2PrefixText.setText("Player 2:");
+
+        player3PrefixText.setText("Player 3:");
+
+        player4PrefixText.setText("Player 4:");
+
+        playersNeededText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        playersNeededText.setText("3 players needed to start");
+
+        startButton.setFont(new java.awt.Font("Monospaced", 1, 24)); // NOI18N
+        startButton.setText("(S)tart");
+        startButton.setEnabled(false);
+        startButton.setPreferredSize(new java.awt.Dimension(115, 60));
+        startButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startButtonActionPerformed(evt);
+            }
+        });
+
+        themeButton.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        themeButton.setText("<HTML>Select<br>(T)heme<HTNML>");
+        themeButton.setPreferredSize(new java.awt.Dimension(115, 60));
+        themeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                themeButtonActionPerformed(evt);
+            }
+        });
+
+        player2NameText.setText(" ");
+
+        player3NameText.setText(" ");
+
+        player4NameText.setText(" ");
+
+        player1NameText.setText(" ");
+
+        gameTitle.setFont(new java.awt.Font("Monospaced", 1, 48)); // NOI18N
+        gameTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gameTitle.setText("Tegakari");
+
+        helpText.setText("Hover for help");
+        helpText.setToolTipText("");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("?");
+        jLabel1.setToolTipText("<html> This is the Lobby where you will wait for enough players to connect before starting the game. <br> Only Player 1 can press the “Start” button once the number of players needed to start is hit. <br> If you are not Player 1, you must wait until Player 1 begins the game. </html>\n");
+        jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        robotButton.setFont(new java.awt.Font("Monospaced", 1, 18)); // NOI18N
+        robotButton.setText("<HTML>Add<br>(R)obot<HTNML>");
+        robotButton.setPreferredSize(new java.awt.Dimension(115, 60));
+        robotButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                robotButtonActionPerformed(evt);
+            }
+        });
+
+        player5NameText.setText(" ");
+
+        player5PrefixText.setText("Player 5:");
+
+        invisibleButtonForTesting.setText("test");
+
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(playersNeededText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(layout.createSequentialGroup()
+                .add(14, 14, 14)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(titleText, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 995, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(gameTitle, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 995, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(layout.createSequentialGroup()
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createSequentialGroup()
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(layout.createSequentialGroup()
+                                .add(374, 374, 374)
+                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                    .add(player1PrefixText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, player3PrefixText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, player2PrefixText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(player4PrefixText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(player5PrefixText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(player2NameText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
+                                    .add(player3NameText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(player4NameText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(player1NameText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(player5NameText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)))
+                            .add(layout.createSequentialGroup()
+                                .add(0, 0, Short.MAX_VALUE)
+                                .add(robotButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(themeButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(startButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(layout.createSequentialGroup()
+                                .add(253, 253, 253)
+                                .add(helpText))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 32, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(16, 16, 16))))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(waitingforPlayersText, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+            .add(layout.createSequentialGroup()
+                .add(invisibleButtonForTesting, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .add(invisibleButtonForTesting, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(46, 46, 46)
+                .add(gameTitle)
+                .add(30, 30, 30)
+                .add(titleText)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(waitingforPlayersText)
+                .add(18, 18, 18)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(player1PrefixText)
+                    .add(player1NameText))
+                .add(18, 18, 18)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(player2PrefixText)
+                    .add(player2NameText))
+                .add(18, 18, 18)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(player3PrefixText)
+                    .add(player3NameText))
+                .add(18, 18, 18)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(player4PrefixText)
+                    .add(player4NameText))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(player5NameText)
+                    .add(player5PrefixText))
+                .add(22, 22, 22)
+                .add(playersNeededText)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(layout.createSequentialGroup()
+                        .add(jLabel1)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(helpText))
+                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(robotButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 74, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(themeButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 74, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(startButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 74, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * Action for theme button.
+     *
+     * @param evt button pressed
+     */
+    private void themeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themeButtonActionPerformed
+        // TODO in 2.0 or 1.1
+        //chooseTheme.setVisible(true);
+    }//GEN-LAST:event_themeButtonActionPerformed
+
+    /**
+     * Action for start button. Only available to the first player. Informs lobby to start game
+     *
+     * @param evt button pressed
+     */
+    private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
+
+    }//GEN-LAST:event_startButtonActionPerformed
+
+    private void robotButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_robotButtonActionPerformed
+        // TODO add your handling code here:
+        //addRobot.setVisible(true);
+    }//GEN-LAST:event_robotButtonActionPerformed
+
+     /**
+     * Returns the lobby for children windows to use
+     *
+     * @return the lobby model
+     */
+    public Lobby getLobby()
+    {
+        return lobby;
+    }
+    
+    /**
+     * Returns the ThemeType so that the lobby can access it
+     * @param theme The <code>ThemeType</code> that represents a theme
+     */
+    public void setThemeType(ThemeType theme)
+    {
+        lobby.setThemeType(theme);
+        System.out.println("Set theme type");
+    }
+
+    @Override
+    public void update(Observable obs, Object obj)
+    {
+        players = new ArrayDeque<>(lobby.getPlayers());
+        firstPlayer = players.peek();
+        // enables or disables robot button depending on the current number 
+        // of players
+        
+        
+        // checks if the player is first player
+        if (lobby.isFirstPlayer())
+        {
+            // enables first player only buttons
+            themeButton.setEnabled(true);
+            robotButton.setEnabled(true);
+            boolean test = lobby.canAddRobot();
+            //System.out.println("can add robots: " + test);
+            enableRobotButton(test);
+            
+        }
+        else
+        {
+            // disables first player only buttons
+            // as the player isn't the first player
+            // ran in case there is a switch in first player
+            themeButton.setEnabled(false);
+            robotButton.setEnabled(false);
+        } 
+        
+        // Clear all names just incase players were removed
+        for (JLabel label : playersNameText)
+        {
+            label.setText("");
+        }
+
+
+        int currPlayerSlot;
+        //update player names to the list shown
+        for (currPlayerSlot = 0; !players.isEmpty(); currPlayerSlot++)
+        {
+            String name = players.remove().getName();
+            playersNameText[currPlayerSlot].setText(name);
+        }
+        //ENDFOR
+
+        //IF minimum number of players needed to start is zero and game has not started
+        if (lobby.getNumPlayersToStart() == 0 && !lobby.isStartGame())
+        {
+            playersNeededText.setVisible(false);
+            //IF first player
+            if (lobby.isFirstPlayer())
+            {
+                waitingforPlayersText.setText("Please start the game!");
+                startButton.setEnabled(true);
+
+                //lobby.signalGameReadyToOthers();
+            }
+            else
+            {
+                waitingforPlayersText.setText("Waiting for " + firstPlayer.getName() + " to start...");
+            }
+        }
+         // incase someone disconnects from the game
+        if (lobby.getNumPlayersToStart() > 0 && !lobby.isStartGame())
+        {
+            playersNeededText.setVisible(true);
+            startButton.setEnabled(false);
+            waitingforPlayersText.setText("Waiting for Players . . . ");
+        }
+
+        playersNeededText.setText(lobby.getNumPlayersToStart() + " players needed to start");
+
+        //IF the game has started
+        if (lobby.isStartGame())
+        {
+            GameTableController ctrl = new GameTableController();
+            GameTable gameTable = new GameTable(ctrl, lobby.getGameEngine());
+            ctrl.setup(gameTable, lobby.getGameEngine(), false, null);
+            gameTable.pack();
+            gameTable.setVisible(true);
+            this.setVisible(false);
+        }
+    }
+    
+    /**
+     * Retrieves the robot button.
+     * 
+     * @return the robot button
+     */
+    public javax.swing.JButton getRobotButton()
+    {
+        return robotButton;
+    }
+    
+    /**
+     * Retrieves the theme button.
+     * 
+     * @return the theme button
+     */
+    public javax.swing.JButton getThemeButton()
+    {
+        return themeButton;
+    }
+    
+    /**
+     * Retrieves the start button.
+     * 
+     * @return the start button
+     */
+    public javax.swing.JButton getStartButton()
+    {
+        return startButton;
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel gameTitle;
+    private javax.swing.JLabel helpText;
+    private javax.swing.JButton invisibleButtonForTesting;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel player1NameText;
+    private javax.swing.JLabel player1PrefixText;
+    private javax.swing.JLabel player2NameText;
+    private javax.swing.JLabel player2PrefixText;
+    private javax.swing.JLabel player3NameText;
+    private javax.swing.JLabel player3PrefixText;
+    private javax.swing.JLabel player4NameText;
+    private javax.swing.JLabel player4PrefixText;
+    private javax.swing.JLabel player5NameText;
+    private javax.swing.JLabel player5PrefixText;
+    private javax.swing.JLabel playersNeededText;
+    private javax.swing.JButton robotButton;
+    private javax.swing.JButton startButton;
+    private javax.swing.JButton themeButton;
+    private javax.swing.JLabel titleText;
+    private javax.swing.JLabel waitingforPlayersText;
+    // End of variables declaration//GEN-END:variables
+}

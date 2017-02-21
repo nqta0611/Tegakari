@@ -1,0 +1,100 @@
+Player joined game
+Insert a username:
+Lobby name changed to: Tegakari: p1
+Player accepted
+Please Choose a theme: Greek(G), Washington(W), or Pirate(P)
+Would you like to add a robot? (y/n)
+What difficulty robot? Basic (b) or Smart (s)
+Would you like to add another robot? (y/n)
+What difficulty robot? Basic (b) or Smart (s)
+Would you like to add another robot? (y/n)
+3 is the number of players in the lobby. If that is the correct number of players you would like in this game press y (yes) to start or else n (no) to wait for more players.
+Card Drawn
+The players still in the game are:
+p1
+Robot1_Smart
+Robot2_Basic
+
+Your Clue Cards are: 
+> Hera
+> Hera
+> Hera
+> Hera
+> Hera
+> Hera
+Your Action Cards are: 
+> [1] All Snoop Card: All Snoop on player's hand to RIGHT
+> [2] All Snoop Card: All Snoop on player's hand to LEFT
+What do you want to do? 
+> Play action 1 [enter 1]
+> Play action 2 [enter 2]
+> Accuse [enter 'a']
+Pick a number from 1 - 6 to snoop the card on
+You saw the card Aphrodite
+Would you like to accuse? y/n
+Ending turn
+Would you like to quit the application? enter yes [y] or no [n]
+Showed to the player Robot1_Smart
+The Card Hera
+Pick a number from 1 - 6 to snoop the card on
+You saw the card Artemis
+Card Drawn
+The players still in the game are:
+p1
+Robot1_Smart
+Robot2_Basic
+
+Your Clue Cards are: 
+> Hera
+> Hera
+> Hera
+> Hera
+> Hera
+> Hera
+Your Action Cards are: 
+> [1] All Snoop Card: All Snoop on player's hand to LEFT
+> [2] All Snoop Card: All Snoop on player's hand to RIGHT
+What do you want to do? 
+> Play action 1 [enter 1]
+> Play action 2 [enter 2]
+> Accuse [enter 'a']
+Pick a number from 1 - 6 to snoop the card on
+You saw the card Artemis
+Would you like to accuse? y/n
+Ending turn
+Would you like to quit the application? enter yes [y] or no [n]
+Showed to the player Robot2_Basic
+The Card Hera
+Pick a number from 1 - 6 to snoop the card on
+You saw the card Aphrodite
+Showed to the player Robot1_Smart
+The Card Hera
+Showed to the player Robot2_Basic
+The Card Hera
+Pick a number from 1 - 6 to snoop the card on
+You saw the card Artemis
+Card Drawn
+The players still in the game are:
+p1
+Robot1_Smart
+Robot2_Basic
+
+Your Clue Cards are: 
+> Hera
+> Hera
+> Hera
+> Hera
+> Hera
+> Hera
+Your Action Cards are: 
+> [1] All Snoop Card: All Snoop on player's hand to RIGHT
+> [2] All Snoop Card: All Snoop on player's hand to RIGHT
+What do you want to do? 
+> Play action 1 [enter 1]
+> Play action 2 [enter 2]
+> Accuse [enter 'a']
+Pick a number from 1 - 6 to snoop the card on
+You saw the card Aphrodite
+Would you like to accuse? y/n
+Ending turn
+Would you like to quit the application? enter yes [y] or no [n]

@@ -1,0 +1,21 @@
+Suspect Aphrodite image/GreeceImages/Suspects-Aphrodite.jpg FEMALE
+Suspect Ares image/GreeceImages/Suspects-Ares.jpg MALE
+Suspect Artemis image/GreeceImages/Suspect-Artemis.jpg FEMALE
+Suspect Dionysus image/GreeceImages/Suspect-Dionysus.jpg MALE
+Suspect Hera image/GreeceImages/Suspect-Hera.jpg FEMALE
+Suspect Hermes image/GreeceImages/Suspect-Hermes.jpg MALE
+Vehicle Apollos%Chariot image/GreeceImages/Transportation-ApollosChariot.jpg FLYING BLUE
+Vehicle Athena%Horse image/GreeceImages/Transportation-AthenaHorse.jpg GROUND RED
+Vehicle Eros%Wings image/GreeceImages/Transportation-ErosWings.jpg FLYING RED
+Vehicle Hades%Dogs image/GreeceImages/Transportation-HadesDogs.jpg GROUND BLUE
+Vehicle Hermes%Wing-Sandals image/GreeceImages/Transportation-HermesWingSandals.jpg FLYING RED
+Vehicle Poseidon%Ship image/GreeceImages/Transportation-PoseidonShip.jpg GROUND BLUE
+Destination Athena%Forest image/GreeceImages/Location-Athena-Forest.jpg NORTHERN EASTERN
+Destination Athens image/GreeceImages/Location-Athens.jpg NORTHERN EASTERN
+Destination Atlas%Sky image/GreeceImages/Location-AtlasSky.jpg NORTHERN WESTERN
+Destination Dionysus%Vineyard image/GreeceImages/Location-Dionysus-Vineyard.jpg NORTHERN WESTERN
+Destination Hades%Underworld image/GreeceImages/Location-HadesUnderworld.jpg SOUTHERN WESTERN
+Destination Hephaestus%Volcano image/GreeceImages/Location-HephaestusVolcano.jpg SOUTHERN WESTERN
+Destination Mount%Olympus image/GreeceImages/Location-MountOlympus.jpg SOUTHERN WESTERN
+Destination Phobe%Moon image/GreeceImages/Location-Phobe-Moon.jpg SOUTHERN EASTERN
+Destination Poseidon%Ocean image/GreeceImages/Location-Poseidon-Ocean.jpg SOUTHERN EASTERN

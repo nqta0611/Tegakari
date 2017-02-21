@@ -1,0 +1,93 @@
+How many times would you like to run the server?
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: GREEK
+Sever adding Robot...
+Sever adding Robot...
+Sever adding Robot...
+Readying game...
+In testing mode... Solution: Aphrodite, Apollo's Chariot, Athena's Forest
+Dealing clues
+	 card: Artemis to p1 to p1
+	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+	 card: Hades' Dogs to Robot2_Basic to Robot2_Basic
+	 card: Athens to Robot3_Basic to Robot3_Basic
+	 card: Atlas' Sky to p1 to p1
+	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+	 card: Ares to Robot2_Basic to Robot2_Basic
+	 card: Dionysus to Robot3_Basic to Robot3_Basic
+	 card: Hermes to p1 to p1
+	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+	 card: Poseidon's Ship to Robot2_Basic to Robot2_Basic
+	 card: Hermes Sandals to Robot3_Basic to Robot3_Basic
+	 card: Dionysus' Vineyard to p1 to p1
+	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+	 card: Hephaestus' Volcano to Robot2_Basic to Robot2_Basic
+	 card: Mount Olympus to Robot3_Basic to Robot3_Basic
+	 card: Phoebe's Moon to p1 to p1
+	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+Dealing action
+	 give actionC(Snoop on any player's hand) to p1
+	 give actionC(Show me one red Vehicle Card) to Robot1_Basic
+	 give actionC(Show me one northern Destination Card) to Robot2_Basic
+	 give actionC(Show me one female Suspect Card) to Robot3_Basic
+Dealing dest
+	 assign dest to p1
+	 assign dest to Robot1_Basic
+	 assign dest to Robot2_Basic
+	 assign dest to Robot3_Basic
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Handling clue card:
+	Other snooped on me Athena's Horse
+Show me all your Vehicle Cards
+Robot turn
+done drawing action card : class tegakari.PrivateTipCard
+
+Begin Robot1_Basic's turn
+Robot1_Basic plays action card: Show me one red Vehicle Card
+	Target Player:Robot1_Basic
+Robot1_Basic has not found solution yet.
+	Handling tip card
+	created robot tip logic
+	called respond to action, and got 2 card to show
+	 show 1, made a card message to Robot1_Basic
+Handling clue card:
+	Robot2_Basic showing me Hades' Dogs
+	 marked : true , true
+	Finish robot turn
+Show me all your Destination Cards
+Robot turn
+done drawing action card : class tegakari.PrivateTipCard
+
+Begin Robot2_Basic's turn
+Robot2_Basic plays action card: Show me one northern Destination Card
+	Target Player:Robot2_Basic
+Robot2_Basic has not found solution yet.
+	Handling tip card
+	created robot tip logic
+	called respond to action, and got 1 card to show
+	 show 1, made a card message to Robot2_Basic
+Handling clue card:
+	Robot3_Basic showing me Athens
+	 marked : true , true
+	Finish robot turn
+Show me all your Suspect Cards
+Robot turn
+done drawing action card : class tegakari.PrivateTipCard
+
+Begin Robot3_Basic's turn
+Robot3_Basic plays action card: Show me one female Suspect Card
+	Target Player:Robot3_Basic
+Robot3_Basic has not found solution yet.
+Handling clue card:
+	p1 showing me Artemis
+	 marked : true , true
+	Finish robot turn
+Client disconnected
+**: The disconnect client was: p1
+Replaced human player with Robot

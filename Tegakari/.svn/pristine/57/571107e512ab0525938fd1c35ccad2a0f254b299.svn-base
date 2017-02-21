@@ -1,0 +1,104 @@
+How many times would you like to run the server?
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: GREEK
+Sever adding Robot...
+Sever adding Robot...
+Readying game...
+In testing mode... Solution: Artemis, Apollo's Chariot, Athena's Forest
+Dealing clues
+	 card: Hera to p1 to p1
+	 card: Artemis to Robot1_Smart to Robot1_Smart
+	 card: Aphrodite to Robot2_Basic to Robot2_Basic
+	 card: Hera to p1 to p1
+	 card: Artemis to Robot1_Smart to Robot1_Smart
+	 card: Aphrodite to Robot2_Basic to Robot2_Basic
+	 card: Hera to p1 to p1
+	 card: Artemis to Robot1_Smart to Robot1_Smart
+	 card: Aphrodite to Robot2_Basic to Robot2_Basic
+	 card: Hera to p1 to p1
+	 card: Artemis to Robot1_Smart to Robot1_Smart
+	 card: Aphrodite to Robot2_Basic to Robot2_Basic
+	 card: Hera to p1 to p1
+	 card: Artemis to Robot1_Smart to Robot1_Smart
+	 card: Aphrodite to Robot2_Basic to Robot2_Basic
+	 card: Hera to p1 to p1
+	 card: Artemis to Robot1_Smart to Robot1_Smart
+	 card: Aphrodite to Robot2_Basic to Robot2_Basic
+Dealing action
+	 give actionC(All Snoop on player's hand to RIGHT) to p1
+	 give actionC(All Snoop on player's hand to RIGHT) to Robot1_Smart
+	 give actionC(All Snoop on player's hand to LEFT) to Robot2_Basic
+Dealing dest
+	 assign dest to p1
+	 assign dest to Robot1_Smart
+	 assign dest to Robot2_Basic
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Handling clue card:
+	Other snooped on me Aphrodite
+Handling clue card:
+	Other snooped on me Artemis
+All Snoop on player's hand to RIGHT
+Robot turn
+done drawing action card : class tegakari.SnoopCard
+
+Begin Robot1_Smart's turn
+Robot1_Smart plays action card: All Snoop on player's hand to RIGHT
+Robot1_Smart has not found solution yet.
+Handling clue card:
+	Robot2_Basic showing me Artemis
+	 marked : true , true
+	Finish robot turn
+	Other snooped on me Artemis
+All Snoop on player's hand to LEFT
+Robot turn
+done drawing action card : class tegakari.SnoopCard
+
+Begin Robot2_Basic's turn
+Robot2_Basic plays action card: All Snoop on player's hand to LEFT
+Robot2_Basic has not found solution yet.
+Handling clue card:
+	Robot1_Smart showing me Aphrodite
+	 marked : true , true
+	Finish robot turn
+	Other snooped on me Aphrodite
+Handling clue card:
+	Other snooped on me Artemis
+Handling clue card:
+	Other snooped on me Artemis
+Handling clue card:
+	Other snooped on me Aphrodite
+All Snoop on player's hand to LEFT
+Robot turn
+done drawing action card : class tegakari.SnoopCard
+
+Begin Robot1_Smart's turn
+Robot1_Smart plays action card: All Snoop on player's hand to RIGHT
+Robot1_Smart has not found solution yet.
+Handling clue card:
+	Robot2_Basic showing me Artemis
+	 marked : true , true
+	Finish robot turn
+	Other snooped on me Artemis
+All Snoop on player's hand to RIGHT
+Robot turn
+done drawing action card : class tegakari.SnoopCard
+
+Begin Robot2_Basic's turn
+Robot2_Basic plays action card: All Snoop on player's hand to LEFT
+Robot2_Basic has not found solution yet.
+Handling clue card:
+	Robot1_Smart showing me Aphrodite
+	 marked : true , true
+	Finish robot turn
+	Other snooped on me Aphrodite
+Handling clue card:
+	Other snooped on me Aphrodite
+Client disconnected
+**: The disconnect client was: p1
+Replaced human player with Robot

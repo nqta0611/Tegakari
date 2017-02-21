@@ -1,0 +1,302 @@
+package guiConsoleController;
+import allguis.AccusationConfirm;
+import allguis.AccusationDialog;
+import allguis.GameTable;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import tegakari.*;
+import java.util.Scanner;
+
+/**
+ * The controller for the GameTable
+ * @author jchoi30
+ */
+public class GameTableController implements ActionListener, KeyListener
+{
+    private I_GameTable view;
+    private boolean isConsole;
+    private GameEngine engine;
+    private GameState state;
+    private Player selfPlayer;
+    private ActionEvent dealer;
+    private ActionEvent action1;
+    private ActionEvent action2;
+    private ActionEvent endTurn;
+    private ActionEvent accuse;
+    private ActionEvent notepad;
+    private ActionEvent rules;
+    private Scanner input;
+    private GameTable gui;
+
+    /**
+     * Sets up the controller
+     * @param aView the game view
+     * @param aEngine the game engine
+     * @param aConsole console or GUI
+     * @param aScanner the scanner to use
+     */
+    public void setup(I_GameTable aView, GameEngine aEngine, 
+            boolean aConsole, Scanner aScanner)
+    {
+        this.isConsole = aConsole;
+        // check if gui
+        if (!aConsole)
+        {
+            gui = (GameTable) aView;
+        }
+        this.view = aView;
+        this.engine = aEngine;
+        this.state = aEngine.getGameState();
+        this.selfPlayer = state.getSelfPlayer();
+        this.input = aScanner;
+        
+        this.dealer = new ActionEvent(this, 0, "DealerActionPile");
+        this.action1 = new ActionEvent(this, 0, "action1");
+        this.action2 = new ActionEvent(this, 0, "action2");
+        this.endTurn = new ActionEvent(this, 0, "EndTurn");
+        this.accuse = new ActionEvent(this, 0, "Accuse");
+        this.notepad = new ActionEvent(this, 0 , "Notepad");
+        this.rules = new ActionEvent(this, 0, "Rules");
+    }
+    
+    /**
+     * helper method for action performed
+     * @param cmd the command
+     * @return false = accuse true = not accuse
+     */
+    private boolean helperAction(String cmd)
+    {
+        boolean out = true;
+        // if draw card
+        if (cmd.equals("DealerActionPile"))
+        {
+            state.drawActionCard();
+            view.drawEnable(false);
+            view.action1Enable(true);
+            view.action2Enable(true);
+            view.accuseEnable(state.hasDrawn());
+        }
+        // if play action 1
+        else if (cmd.equals("action1"))
+        {
+            view.action2Enable(false);
+            view.action1Enable(false);
+            view.endTurnEnable(true);
+            state.setChosenActionCard(selfPlayer.getActionCards().get(0));
+            engine.beginTurn();
+        }
+        // if play action 2
+        else if (cmd.equals("action2"))
+        {
+            view.action2Enable(false);
+            view.action1Enable(false);
+            view.endTurnEnable(true);
+            state.setChosenActionCard(selfPlayer.getActionCards().get(1));
+            engine.beginTurn();
+        }
+        // if end turn
+        else if (cmd.equals("EndTurn"))
+        {
+            state.setEndTurn(true);
+            view.endTurnEnable(false);
+            engine.finishingTurn();
+        }
+        // if notepad
+        else if (cmd.equals("Notepad"))
+        {
+            view.notepadEnable(true);
+        }
+        // if rules
+        else if (cmd.equals("Rules"))
+        {
+            view.rulesEnable();
+        }
+        // if accuse
+        else
+        {
+            out = false;
+        }
+        return out;
+    }
+    
+    /**
+     * Helper method for action performed
+     * @param ctrl the accusation controller
+     */
+    private void helperGUI(AccusationController ctrl)
+    {
+        AccusationDialog aview = new AccusationDialog(ctrl, 
+                        (GameTable)view, true);
+        ctrl.setup(aview, state);
+        aview.pack();
+        aview.setVisible(true);
+        aview.dispose();
+    }
+    /**
+     * action performed
+     * @param e the action
+     */
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        String cmd = e.getActionCommand();
+        // false if accuse pressed, true if it was a different button
+        boolean before = helperAction(cmd);
+        // if accuse button pressed
+        if (!before) //Accuse Button was pressed
+        {
+            Solution anAccuse = null;
+            AccusationController ctrl = new AccusationController();
+            // if console
+            if (isConsole)
+            {
+                AccusationConsole aview = new AccusationConsole(ctrl, input);
+                ctrl.setup(aview, state);
+                aview.startDialogue();
+            }
+            // if gui
+            else
+            {
+                helperGUI(ctrl);
+            }
+            //TODO : call the dialog to get the accusation 
+            //form(suspest-vehicle-dest) from user
+            anAccuse = ctrl.showDialog();
+            //IF accusation is set to something
+            if (anAccuse != null)
+            {
+                AccusationConfirmController cctrl = new AccusationConfirmController();
+                // if console
+                if (isConsole)
+                {
+                    AccusationConfirmConsole confirmDialog = 
+                            new AccusationConfirmConsole(cctrl, anAccuse, 
+                            input, (GameTableConsole)view);
+                    cctrl.setup(confirmDialog);
+                    confirmDialog.startDialogue();
+                }
+                // if gui
+                else
+                {
+                    AccusationConfirm confirmDialog = new AccusationConfirm(
+                            cctrl, (GameTable)view, true, anAccuse);
+                    cctrl.setup(confirmDialog);
+                    confirmDialog.pack();
+                    confirmDialog.setVisible(true);
+                    confirmDialog.dispose();
+                }
+                //IF accusation was confirmed
+                if (cctrl.showDialog())
+                {
+                    view.accuseEnable(false);
+                    state.setAccusation(anAccuse);
+                    engine.finishingTurn();
+                }
+                //ENDIF
+            }
+            //ENDIF
+        }
+    }
+
+    /**
+     * key typed
+     * @param e the key
+     */
+    @Override
+    public void keyTyped(KeyEvent e) 
+    {
+        // doesn't need to do anything, key pressed does it
+        // can't remove this method as it is needed to implement keyListener
+    }
+
+    /**
+     * key pressed
+     * @param e the key
+     */
+    @Override
+    public void keyPressed(KeyEvent e) 
+    {
+        keyPressedSet1(e);
+        keyPressedSet2(e);
+    }
+    
+    private void keyPressedSet1(KeyEvent e)
+    {
+        // if D
+        if (e.getKeyCode() == KeyEvent.VK_D && 
+                (isConsole || gui.getDrawButton().isEnabled()))
+        {
+            this.actionPerformed(dealer);
+        }
+        // if 1
+        else if (e.getKeyCode() == KeyEvent.VK_1 
+                && (isConsole || gui.getActionCard1Button().isEnabled()))
+        {
+            this.actionPerformed(action1);
+        }
+        // if 2
+        else if (e.getKeyCode() == KeyEvent.VK_2 
+                && (isConsole || gui.getActionCard2Button().isEnabled()))
+        {
+            this.actionPerformed(action2);
+        }
+    }
+    
+    private void keyPressedSet2(KeyEvent e)
+    {
+        // if E
+        if (e.getKeyCode() == KeyEvent.VK_E 
+                && (isConsole || gui.getEndTurnButton().isEnabled()))
+        {
+            this.actionPerformed(endTurn);
+        }
+        // if A
+        else if (e.getKeyCode() == KeyEvent.VK_A
+                && (isConsole || gui.getAccuseButton().isEnabled()))
+        {
+            this.actionPerformed(accuse);
+        }
+        // if N
+        else if (e.getKeyCode() == KeyEvent.VK_N
+                && (isConsole || gui.getNotepadButton().isEnabled()))
+        {
+            this.actionPerformed(notepad);
+        }
+        // none of the above
+        else
+        {
+            keyPressedSet2Helper(e);
+        }
+    }
+    
+    private void keyPressedSet2Helper(KeyEvent e)
+    {
+        // if R
+        if (e.getKeyCode() == KeyEvent.VK_R
+                && (isConsole || gui.getRulesButton().isEnabled()))
+        {
+            this.actionPerformed(rules);
+        }
+    }
+
+    /**
+     * key released
+     * @param e the key
+     */
+    @Override
+    public void keyReleased(KeyEvent e) 
+    {
+        // doesn't need to do anything, key pressed does it
+        // can't remove this method as it is needed to implement keyListener
+    }
+    /**
+     * Getter method for GameTableConsole
+     * @return the console
+     */
+    public GameTableConsole getConsole()
+    {
+        return (GameTableConsole)this.view;
+    }
+}

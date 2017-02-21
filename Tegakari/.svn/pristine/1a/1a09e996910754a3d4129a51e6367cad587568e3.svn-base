@@ -1,0 +1,58 @@
+package integration_test;
+
+import org.uispec4j.*;
+import allguis.*;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+import tegakari.*;
+import java.util.*;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
+import guiConsoleController.*;
+import java.awt.event.KeyEvent;
+import org.uispec4j.interception.WindowInterceptor;
+import junit.framework.TestCase;
+
+/**
+ *
+ * @author DeionLaw
+ */
+public class AccusationConfirmControllerTest extends TestCase
+{
+    AccusationConfirmController ctrl = new AccusationConfirmController();
+    AccusationConfirm view;
+    
+    public AccusationConfirmControllerTest(String testName)
+    {
+        super(testName);
+    }
+
+    @Override
+    protected void setUp() throws Exception
+    {
+        super.setUp();
+        Theme theme = new Theme();
+        
+        Suspect suspect = theme.getSuspects().get(0);
+        Vehicle vehicle = theme.getVehicles().get(0);
+        Destination destination = theme.getDestinations().get(0);
+        
+        Solution accuse = new Solution(suspect, vehicle, destination);
+        
+        view = new AccusationConfirm(ctrl, new JFrame(), false, accuse);
+        ctrl.setup(view);
+    }
+    
+    public void testKeys()
+    {
+        ctrl.keyReleased(null);
+        ctrl.keyTyped(null);
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_SPACE,
+                KeyEvent.VK_SPACE, '0'));
+        assertTrue(ctrl.showDialog());
+        ctrl.keyPressed(new KeyEvent(new JButton(""), 0, 0, KeyEvent.VK_C,
+                KeyEvent.VK_C, '0'));
+        assertFalse(ctrl.showDialog());
+    }
+}

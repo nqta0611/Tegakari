@@ -1,0 +1,64 @@
+Player joined game
+Insert a username:
+Lobby name changed to: Tegakari: player1
+Player accepted
+Please Choose a theme: Greek(G), Washington(W), or Pirate(P)
+Would you like to add a robot? (y/n)
+minimum number of players added, start game? y/n
+Card Drawn
+The players still in the game are:
+player1
+player2
+player3
+player4
+Your Clue Cards are
+Anne Bonny
+Blackbeard
+Calico Jack
+Granuaile
+Santiago
+Your Action Cards are
+Suggestion Card
+Suggestion Card
+What do you want to do? 
+Play action 1 enter 1
+Play action 2 enter 2
+Accuse enter a
+Pick a suspect according to theme (1-6)
+Pick a vehicle according to theme (1-6)
+Pick a destination according to theme (1-9)
+Are you sure to make this accusation: [Anne Bonny] in a [Tartane] at [Barbados]
+Enter (y) to confirm, (n) to cancel
+Your accusation:
+Anne Bonny
+Tartane
+Barbados
+Which does not match the correct solution
+William Kidd
+Brig
+Gibraltar
+You Lost The Game
+player2 accuses:
+Anne Bonny
+Tartane
+Barbados
+Which does not match the correct solution
+player2 Lost The Game
+player3 accuses:
+Anne Bonny
+Tartane
+Barbados
+Which does not match the correct solution
+player3 Lost The Game
+player4 accuses:
+Anne Bonny
+Tartane
+Barbados
+Which does not match the correct solution
+player4 Lost The Game
+Game Result: No Winner
+All players made false accusations or some player disconnected.
+
+Correct Solution: William Kidd Brig Gibraltar
+Game Over
+Play again? Enter: (y/n)

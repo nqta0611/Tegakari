@@ -1,0 +1,3 @@
+The layout for the input files should be as follows...
+
+TypeClueCard Name ImageLocation Attribute1 Attribute2?

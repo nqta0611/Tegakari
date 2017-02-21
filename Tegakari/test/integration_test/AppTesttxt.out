@@ -1,0 +1,18 @@
+Client connected
+Player joined game
+Insert a username:
+Lobby name changed to: Tegakari: 1
+Player accepted
+Please Choose a theme: Greek(G), Washington(W), or Pirate(P)
+Would you like to add a robot? (y/n)
+Connection exception: No line found, class type: class java.util.NoSuchElementException
+file not found, check your arguments for input
+file not found, check your arguments for output
+file not found, check your arguments for error
+New Theme Selected: GREEK
+New Theme Selected: GREEK
+Include a valid IP address of the target server immediately following the '-server' flag. E.g: -server 129.65.150.243
+File Not found pass.
+Connection exception: null, class type: class java.io.EOFException
+Client disconnected
+Client was disconnected

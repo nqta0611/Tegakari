@@ -1,0 +1,14 @@
+java.net.ConnectException: Connection refused
+ERROR: unable to ask server to send players.java.net.SocketException: socket does not exist
+Player joined game
+Insert a username:
+Please use only alphanumeric characters and underscores.
+Insert a username:
+ERROR: unable to send self player to server.java.net.SocketException: socket does not exist
+Lobby name changed to: Tegakari: yup
+Player accepted
+file not found, check your arguments for input
+file not found, check your arguments for output
+file not found, check your arguments for error
+Include a valid IP address of the target server immediately following the '-server' flag. E.g: -server 129.65.150.243
+File Not found pass.

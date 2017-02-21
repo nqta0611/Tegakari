@@ -1,0 +1,206 @@
+How many times would you like to run the server?
+Lobby phase
+Started listening for clients
+Client connected
+New Theme Selected: GREEK
+Sever adding Robot...
+Sever adding Robot...
+Client connected
+Readying game...
+In testing mode... Solution: Hermes, Hermes Sandals, Poseidon's Ocean
+Dealing clues
+	 card: Aphrodite to p1 to p1
+	 card: Apollo's Chariot to Robot1_Basic to Robot1_Basic
+	 card: Athens to Robot2_Basic to Robot2_Basic
+	 card: Dionysus to p2 to p2
+	 card: Artemis to p1 to p1
+	 card: Athena's Horse to Robot1_Basic to Robot1_Basic
+	 card: Atlas' Sky to Robot2_Basic to Robot2_Basic
+	 card: Eros' Wings to p2 to p2
+	 card: Hera to p1 to p1
+	 card: Hades' Dogs to Robot1_Basic to Robot1_Basic
+	 card: Hades' Underworld to Robot2_Basic to Robot2_Basic
+	 card: Athena's Forest to p2 to p2
+	 card: Ares to p1 to p1
+	 card: Poseidon's Ship to Robot1_Basic to Robot1_Basic
+	 card: Mount Olympus to Robot2_Basic to Robot2_Basic
+	 card: Dionysus' Vineyard to p2 to p2
+	 card: Hephaestus' Volcano to p1 to p1
+	 card: Phoebe's Moon to Robot1_Basic to Robot1_Basic
+Dealing action
+	 give actionC(Show me one flying Vehicle Card) to p1
+	 give actionC(Show me one flying Vehicle Card) to Robot1_Basic
+	 give actionC(Show me one flying Vehicle Card) to Robot2_Basic
+	 give actionC(Show me one flying Vehicle Card) to p2
+Dealing dest
+	 assign dest to p1
+	 assign dest to Robot1_Basic
+	 assign dest to Robot2_Basic
+	 assign dest to p2
+Sent table
+Sent solution
+Sent GAME_READY
+Starting game...
+Game phase
+Show me one flying Vehicle Card
+Robot turn
+done drawing action card : class tegakari.SuperSleuthCard
+
+Begin Robot1_Basic's turn
+Robot1_Basic plays action card: Show me one flying Vehicle Card
+	perform Sleuth	created sleuthLogic
+	expected clues: 1
+	added HistoryLog
+Robot1_Basic has not found solution yet.
+Handling clue card:
+	p2 showing me Eros' Wings
+	 marked : true , true
+	Finish robot turn
+Show me one blue Vehicle Card
+Robot turn
+done drawing action card : class tegakari.SuperSleuthCard
+
+Begin Robot2_Basic's turn
+Robot2_Basic plays action card: Show me one flying Vehicle Card
+	perform Sleuth	created sleuthLogic
+	expected clues: 1
+	added HistoryLog
+Robot2_Basic has not found solution yet.
+Handling clue card:
+	p2 showing me Eros' Wings
+	 marked : true , true
+	Finish robot turn
+Show me one southern Destination Card
+Robot turn
+done drawing action card : class tegakari.SuperSleuthCard
+
+Begin Robot1_Basic's turn
+Robot1_Basic plays action card: Show me one flying Vehicle Card
+	perform Sleuth	created sleuthLogic
+	expected clues: 1
+	added HistoryLog
+Robot1_Basic has not found solution yet.
+Handling clue card:
+	p2 showing me Eros' Wings
+	 marked : true , true
+	Finish robot turn
+Show me one western Destination Card
+Robot turn
+done drawing action card : class tegakari.SuperSleuthCard
+
+Begin Robot2_Basic's turn
+Robot2_Basic plays action card: Show me one blue Vehicle Card
+	perform Sleuth	created sleuthLogic
+	expected clues: 2
+	added HistoryLog
+Robot2_Basic has not found solution yet.
+	Handling sleuth card
+	created robot sleuth logic
+	got note from state
+	called respond to action, and got 1 card to show
+	made a card message to Robot2_Basic
+Handling clue card:
+	Robot1_Basic showing me Athena's Horse
+	 marked : true , true
+Handling clue card:
+	p2 showing me Eros' Wings
+	 marked : true , true
+	Finish robot turn
+	Handling sleuth card
+	created robot sleuth logic
+	got note from state
+	called respond to action, and got 1 card to show
+	made a card message to p2
+Client disconnected
+**: The disconnect client was: p2
+Replaced human player with Robot
+	Handling sleuth card
+	created robot sleuth logic
+	got note from state
+	called respond to action, and got 1 card to show
+	made a card message to p1
+Show me one male Suspect Card
+Robot turn
+done drawing action card : class tegakari.SuperSleuthCard
+
+Begin Robot1_Basic's turn
+Robot1_Basic plays action card: Show me one southern Destination Card
+	perform Sleuth	created sleuthLogic
+	expected clues: 2
+	added HistoryLog
+Robot1_Basic has not found solution yet.
+	Handling sleuth card
+	created robot sleuth logic
+	got note from state
+	called respond to action, and got 1 card to show
+	made a card message to Robot1_Basic
+Handling clue card:
+	Robot2_Basic showing me Mount Olympus
+	 marked : true , true
+Handling clue card:
+	p1 showing me Hephaestus' Volcano
+	 marked : true , true
+	Finish robot turn
+Show me one female Suspect Card
+Robot turn
+done drawing action card : class tegakari.SuperSleuthCard
+
+Begin Robot2_Basic's turn
+Robot2_Basic plays action card: Show me one western Destination Card
+	perform Sleuth	created sleuthLogic
+	expected clues: 2
+	added HistoryLog
+Robot2_Basic has not found solution yet.
+	Handling sleuth card
+	created robot sleuth logic
+	got note from state
+	called respond to action, and got 1 card to show
+	made a card message to Robot2_Basic
+Handling clue card:
+	p2 showing me Dionysus' Vineyard
+	 marked : true , true
+Handling clue card:
+	p1 showing me Hephaestus' Volcano
+	 marked : true , true
+	Finish robot turn
+Show me one female Suspect Card
+Robot turn
+done drawing action card : class tegakari.PrivateTipCard
+
+Begin p2's turn
+p2 plays action card: Show me one flying Vehicle Card
+	perform Sleuth	created sleuthLogic
+	expected clues: 0
+	added HistoryLog
+p2 has not found solution yet.
+	Handling sleuth card
+	created robot sleuth logic
+	got note from state
+	called respond to action, and got 1 card to show
+	made a card message to p1
+	Handling sleuth card
+	created robot sleuth logic
+	got note from state
+	called respond to action, and got 1 card to show
+	made a card message to p1
+Show me all your Vehicle Cards
+Robot turn
+done drawing action card : class tegakari.PrivateTipCard
+
+Begin Robot1_Basic's turn
+Robot1_Basic plays action card: Show me one male Suspect Card
+	perform Sleuth	created sleuthLogic
+	expected clues: 2
+	added HistoryLog
+Robot1_Basic has not found solution yet.
+	Handling sleuth card
+	created robot sleuth logic
+	got note from state
+	called respond to action, and got 1 card to show
+	made a card message to Robot1_Basic
+Handling clue card:
+	p2 showing me Dionysus
+	 marked : true , true
+Client disconnected
+**: The disconnect client was: p1
+Replaced human player with Robot

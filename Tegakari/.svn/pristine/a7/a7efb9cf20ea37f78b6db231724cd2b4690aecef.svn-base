@@ -1,0 +1,67 @@
+Player joined game
+Insert a username:
+Lobby name changed to: Tegakari: player3
+Player accepted
+Card Drawn
+The players still in the game are:
+player3
+player4
+player1
+player2
+
+Your Clue Cards are: 
+> Athens
+> Atlas' Sky
+> Hades' Underworld
+> Mount Olympus
+Your Action Cards are: 
+> [1] Private Tip Card: Show me all your Vehicle Cards
+> [2] Private Tip Card: Show me all your Vehicle Cards
+What do you want to do? 
+> Play action 1 [enter 1]
+> Play action 2 [enter 2]
+> Accuse [enter 'a']
+1: player4
+2: player1
+3: player2
+Input which player you would like to send this card to
+player4 shows you:
+Eros' Wings
+Would you like to accuse? y/n
+Ending turn
+Would you like to quit the application? enter yes [y] or no [n]
+Card Drawn
+The players still in the game are:
+player3
+player4
+player1
+player2
+
+Your Clue Cards are: 
+> Athens
+> Atlas' Sky
+> Hades' Underworld
+> Mount Olympus
+Your Action Cards are: 
+> [1] Private Tip Card: Show me all your Vehicle Cards
+> [2] Private Tip Card: Show me all your Destination Cards
+What do you want to do? 
+> Play action 1 [enter 1]
+> Play action 2 [enter 2]
+> Accuse [enter 'a']
+1: player4
+2: player1
+3: player2
+Input which player you would like to send this card to
+player4 shows you:
+Eros' Wings
+Would you like to accuse? y/n
+Ending turn
+Would you like to quit the application? enter yes [y] or no [n]
+player1 accuses:
+Hermes
+Hermes Sandals
+Poseidon's Ocean
+Which matches the correct solution
+Game Over
+Play again? Enter: (y/n)

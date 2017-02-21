@@ -1,0 +1,15 @@
+java.util.NoSuchElementException: No line found
+	at java.util.Scanner.nextLine(Scanner.java:1585)
+	at guiConsoleController.ConsoleLobbyPhase.update(ConsoleLobbyPhase.java:137)
+	at java.util.Observable.notifyObservers(Observable.java:159)
+	at java.util.Observable.notifyObservers(Observable.java:115)
+	at tegakari.Lobby.updatePlayers(Lobby.java:343)
+	at tegakari.GameClient.handleMessageFromServer(GameClient.java:279)
+	at com.lloseng.ocsf.client.AbstractClient.run(AbstractClient.java:281)
+	at java.lang.Thread.run(Thread.java:745)
+java.io.EOFException
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:2598)
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1318)
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:370)
+	at com.lloseng.ocsf.client.AbstractClient.run(AbstractClient.java:276)
+	at java.lang.Thread.run(Thread.java:745)

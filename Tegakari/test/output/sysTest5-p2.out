@@ -1,0 +1,36 @@
+Player joined game
+Insert a username:
+Lobby name changed to: Tegakari: player2
+Player accepted
+Cards that met the Private Tip condition:
+player1 played this Private Tip but you have no cards to show!
+Cards that met the Private Tip condition:
+Robot1_Basic played this Private Tip but you have no cards to show!
+Card Drawn
+The players still in the game are:
+player2
+player1
+Robot1_Basic
+
+Your Clue Cards are: 
+> Athens
+> Athena's Horse
+> Hera
+> Athena's Forest
+> Mount Olympus
+> Phoebe's Moon
+Your Action Cards are: 
+> [1] Private Tip Card: Show me all your Vehicle Cards
+> [2] Private Tip Card: Show me one red Vehicle Card
+What do you want to do? 
+> Play action 1 [enter 1]
+> Play action 2 [enter 2]
+> Accuse [enter 'a']
+1: player1
+2: Robot1_Basic
+Input which player you would like to send this card to
+player1 shows you:
+Hades' Dogs
+Would you like to accuse? y/n
+Ending turn
+Would you like to quit the application? enter yes [y] or no [n]

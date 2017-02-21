@@ -1,0 +1,100 @@
+package integration_test;
+
+import allguis.LobbyGUI;
+import guiConsoleController.LobbyController;
+import java.awt.event.KeyEvent;
+import javax.swing.JButton;
+import static org.mockito.Mockito.*;
+import org.uispec4j.Trigger;
+import org.uispec4j.UISpec4J;
+import org.uispec4j.UISpecTestCase;
+import org.uispec4j.interception.BasicHandler;
+import org.uispec4j.interception.WindowInterceptor;
+import tegakari.Lobby;
+
+/**
+ *
+ * @author cathibod
+ */
+public class LobbyControllerTest extends UISpecTestCase {
+    
+    LobbyController ctrl;
+    LobbyGUI view;
+    Lobby lobby = mock(Lobby.class);
+    
+    
+    public LobbyControllerTest(String testName) {
+        super(testName);
+    }
+    
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        ctrl = new LobbyController();
+        view = new LobbyGUI(lobby, ctrl);
+    }
+
+    /**
+     * Test of keyTyped method and keyReleased, of class MainWindowController.
+     */
+    public void testKeyTypedAndReleased() {
+        System.out.println("keyTypedandReleased");
+        
+        ctrl.keyTyped(null);
+        ctrl.keyReleased(null);
+    }
+
+    static
+    {
+        UISpec4J.init();
+    }
+    
+    /**
+     * Test of keyPressed, actionPerformed, and showDialog
+     * methods, of class MainWindowController.
+     */
+    public void testController() 
+    {
+        System.out.println("controller");
+        ctrl.setup(view, lobby, false);
+        JButton btn = new JButton("");
+        final KeyEvent s = new KeyEvent(btn,0,0,KeyEvent.VK_S,
+                KeyEvent.VK_S,'j');
+        final KeyEvent r = new KeyEvent(btn,0,0,KeyEvent.VK_R,
+                KeyEvent.VK_R,'h');
+        final KeyEvent t = new KeyEvent(btn,0,0,KeyEvent.VK_T,
+                KeyEvent.VK_T,'h');
+        
+        when(lobby.isFirstPlayer()).thenReturn(true);
+        WindowInterceptor.init(
+                new Trigger() 
+                {
+                    public void run() throws Exception
+                    {
+                        ctrl.keyPressed(t);
+                    }
+                }
+		).
+                process(BasicHandler.init().
+                assertContainsText("<HTML>Choose<br>Theme<HTNML>").
+                triggerButtonClick("OK (SPACE)")).run();
+        
+        when(lobby.canAddRobot()).thenReturn(true);
+        WindowInterceptor.init(
+                new Trigger() 
+                {
+                    public void run() throws Exception
+                    {
+                        ctrl.keyPressed(r);
+                    }
+                }
+		).
+                process(BasicHandler.init().
+                assertContainsText("Current: ").
+                triggerButtonClick("Add Robot Player (SPACE)")).run();
+
+        ctrl.keyPressed(s);
+        
+        verify(lobby).startGame();
+    }
+}
